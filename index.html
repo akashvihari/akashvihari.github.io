@@ -6,337 +6,71 @@
     <title>Community Hub & Services | Eastern Ghats Explorer</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #14532D;
-            --primary-dark: #0A2E18;
-            --secondary: #9A3412;
-            --accent: #D97706;
-            --surface: #FAF8F5;
-            --container: #F0ECE1;
-            --text-dark: #1C1917;
-            --text-muted: #57534E;
-            --white: #FFFFFF;
-        }
-
+        :root { --primary: #14532D; --primary-dark: #0A2E18; --secondary: #9A3412; --accent: #D97706; --surface: #FAF8F5; --container: #F0ECE1; --text-dark: #1C1917; --text-muted: #57534E; --white: #FFFFFF; }
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--surface); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-
-        /* 1. Header Section */
-        header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #1E6B3B 100%);
-            color: var(--white);
-            padding: 32px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(20, 83, 45, 0.25);
-        }
-
-        .profile-wrapper {
-            position: absolute;
-            left: 28px;
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(45deg, var(--accent), rgba(255,255,255,0.4));
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-            animation: floatProfile 4s ease-in-out infinite;
-        }
-
-        .profile-pic {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            transition: opacity 0.6s ease-in-out;
-        }
-
-        @keyframes floatProfile {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-        }
-
+        header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #1E6B3B 100%); color: var(--white); padding: 32px 20px; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; box-shadow: 0 8px 25px rgba(20, 83, 45, 0.25); }
+        .profile-wrapper { position: absolute; left: 28px; width: 90px; height: 90px; border-radius: 50%; padding: 4px; background: linear-gradient(45deg, var(--accent), rgba(255,255,255,0.4)); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); animation: floatProfile 4s ease-in-out infinite; }
+        .profile-pic { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; transition: opacity 0.6s ease-in-out; }
+        @keyframes floatProfile { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
         .header-text { max-width: 720px; }
         .header-text h1 { font-size: 34px; letter-spacing: -0.5px; }
         .header-text p { font-size: 14px; opacity: 0.9; margin-top: 4px; }
-
         .header-socials { margin-top: 12px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-        .social-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.16);
-            color: var(--white);
-            text-decoration: none;
-            padding: 7px 16px;
-            border-radius: 9999px;
-            font-size: 13px;
-            font-weight: 600;
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: 0.25s;
-        }
-        .social-pill:hover { background: var(--accent); border-color: var(--accent); }
-
-        /* 2. Easy Quick-Action Bar for Elders & Everyone */
-        .quick-help-bar {
-            background: #FEF3C7;
-            border-bottom: 2px solid #F59E0B;
-            padding: 12px 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            text-align: center;
-        }
+        .social-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.16); color: var(--white); text-decoration: none; padding: 7px 16px; border-radius: 9999px; font-size: 13px; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); }
+        .quick-help-bar { background: #FEF3C7; border-bottom: 2px solid #F59E0B; padding: 12px 16px; display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; text-align: center; }
         .quick-help-bar span { font-weight: 700; font-size: 14px; color: #78350F; }
-        .quick-btn {
-            background: #15803D;
-            color: white;
-            text-decoration: none;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
+        .quick-btn { background: #15803D; color: white; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
         .quick-btn.call { background: #B91C1C; }
-
-        /* 3. Navigation Tabs */
-        nav {
-            background-color: var(--secondary);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            padding: 13px 16px;
-            font-size: 14px;
-            font-weight: 600;
-        }
+        nav { background-color: var(--secondary); position: sticky; top: 0; z-index: 100; display: flex; justify-content: center; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        nav a { color: var(--white); text-decoration: none; padding: 13px 16px; font-size: 14px; font-weight: 600; }
         nav a:hover { background-color: var(--accent); }
-
-        /* Main Container */
         .container { max-width: 1240px; margin: 0 auto; padding: 24px 16px; width: 100%; }
-        section {
-            background-color: var(--container);
-            border-radius: 16px;
-            padding: 28px 22px;
-            margin-bottom: 36px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-            width: 100%;
-        }
+        section { background-color: var(--container); border-radius: 16px; padding: 28px 22px; margin-bottom: 36px; box-shadow: 0 6px 20px rgba(0,0,0,0.05); width: 100%; }
         .section-header { margin-bottom: 24px; border-bottom: 2px solid #E6E1D3; padding-bottom: 12px; }
         .section-header h2 { font-size: 28px; color: var(--primary); }
         .section-header p { color: var(--text-muted); font-size: 14px; }
-
-        /* 3-Column Balanced Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 22px;
-            width: 100%;
-        }
-
-        /* Cards */
-        .card {
-            background-color: var(--surface);
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-            transition: transform 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid #E6E1D3;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; width: 100%; }
+        .card { background-color: var(--surface); border-radius: 14px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.07); transition: transform 0.25s ease; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #E6E1D3; }
         .card:hover { transform: translateY(-5px); }
-        .card-img-wrap { position: relative; width: 100%; height: 195px; }
-        .card img, .card video {
-            width: 100%;
-            height: 195px;
-            object-fit: cover;
-            background-color: #E6E1D3;
-            display: block;
-        }
-        .price-tag {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(20, 83, 45, 0.95);
-            color: #FDE68A;
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 700;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
+        .card-img-wrap { position: relative; width: 100%; height: 190px; }
+        .card img, .card video { width: 100%; height: 190px; object-fit: cover; background-color: #E6E1D3; display: block; }
+        .price-tag { position: absolute; top: 12px; right: 12px; background: rgba(20, 83, 45, 0.95); color: #FDE68A; padding: 5px 12px; border-radius: 8px; font-size: 13px; font-weight: 700; }
         .card-body { padding: 18px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
-        .badge {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--white);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 9999px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            width: fit-content;
-        }
+        .badge { display: inline-block; background-color: var(--accent); color: var(--white); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 9999px; margin-bottom: 8px; text-transform: uppercase; width: fit-content; }
         .card-body h3 { font-size: 20px; color: var(--text-dark); margin-bottom: 6px; }
         .card-body p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px; }
-
         .btn-group { display: flex; gap: 8px; flex-direction: column; }
-        .btn {
-            display: block;
-            text-align: center;
-            background-color: var(--primary);
-            color: var(--white);
-            text-decoration: none;
-            padding: 11px 14px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.2s;
-        }
-        .btn:hover { background-color: var(--primary-dark); }
+        .btn { display: block; text-align: center; background-color: var(--primary); color: var(--white); text-decoration: none; padding: 11px 14px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; width: 100%; }
         .btn-open { background-color: var(--accent); color: var(--white); }
-        .btn-open:hover { background-color: #B45309; }
         .btn-whatsapp { background-color: #15803D; }
         .btn-call { background-color: var(--secondary); }
-
-        /* POPUP MODAL STYLES (For 6 Photos & Prices Inside Each Card) */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.78);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            padding: 16px;
-        }
-        .modal-box {
-            background: var(--surface);
-            max-width: 820px;
-            width: 100%;
-            max-height: 88vh;
-            overflow-y: auto;
-            border-radius: 16px;
-            padding: 24px;
-            position: relative;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            animation: popIn 0.25s ease;
-        }
-        @keyframes popIn {
-            from { transform: scale(0.92); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        .modal-close {
-            position: sticky;
-            top: 0;
-            float: right;
-            background: #DC2626;
-            color: white;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            z-index: 10;
-        }
-        .modal-title { font-size: 26px; color: var(--primary); margin-bottom: 4px; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 99999; justify-content: center; align-items: center; padding: 16px; }
+        .modal-box { background: var(--surface); max-width: 820px; width: 100%; max-height: 88vh; overflow-y: auto; border-radius: 16px; padding: 24px; position: relative; }
+        .modal-close { position: sticky; top: 0; float: right; background: #DC2626; color: white; border: none; padding: 7px 14px; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; z-index: 10; }
+        .modal-title { font-size: 24px; color: var(--primary); margin-bottom: 4px; }
         .modal-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 18px; }
-        .modal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 14px;
-            margin-bottom: 20px;
-        }
-        .mini-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #E6E1D3;
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        }
+        .modal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
+        .mini-card { background: white; border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D3; text-align: center; }
         .mini-card img { width: 100%; height: 130px; object-fit: cover; }
         .mini-card-info { padding: 10px; }
-        .mini-card-info h4 { font-family: 'Poppins', sans-serif; font-size: 14px; color: var(--text-dark); }
+        .mini-card-info h4 { font-family: 'Poppins', sans-serif; font-size: 14px; }
         .mini-card-info span { display: inline-block; margin-top: 4px; background: #DCFCE7; color: #166534; font-weight: 700; font-size: 13px; padding: 2px 10px; border-radius: 6px; }
-
-        /* Feedback Section */
-        #feedback {
-            background: linear-gradient(rgba(240, 236, 225, 0.86), rgba(240, 236, 225, 0.92)),
-                        url('https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp') center/cover no-repeat;
-        }
-        .feedback-box {
-            max-width: 620px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 24px;
-            border-radius: 14px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
+        #feedback { background: linear-gradient(rgba(240, 236, 225, 0.85), rgba(240, 236, 225, 0.92)), url('https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox') center/cover no-repeat; }
+        .feedback-box { max-width: 620px; margin: 0 auto; background: rgba(255, 255, 255, 0.95); padding: 24px; border-radius: 14px; }
         .form-group { margin-bottom: 14px; }
         .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--primary); }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #D6D3D1;
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: var(--white);
-            text-align: center;
-            padding: 32px 16px;
-            font-size: 14px;
-        }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #D6D3D1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; }
+        footer { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: var(--white); text-align: center; padding: 32px 16px; font-size: 14px; }
         .footer-links { margin: 14px 0; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
         .footer-links a { color: #FDBA74; text-decoration: none; font-weight: 600; }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; padding: 24px 14px; }
-            .profile-wrapper { position: static; margin-bottom: 12px; width: 84px; height: 84px; }
-            .header-text h1 { font-size: 25px; }
-            nav a { padding: 11px 10px; font-size: 12.5px; }
-        }
+        @media (max-width: 768px) { header { flex-direction: column; padding: 24px 14px; } .profile-wrapper { position: static; margin-bottom: 12px; width: 84px; height: 84px; } .header-text h1 { font-size: 25px; } nav a { padding: 11px 10px; font-size: 12.5px; } }
     </style>
 </head>
 <body>
-
-    <!-- 1. Header Section -->
     <header>
-        <div class="profile-wrapper">
-            <img id="rotatingProfile" 
-                 src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp" 
-                 alt="Prakash Profile" 
-                 class="profile-pic">
-        </div>
+        <div class="profile-wrapper"><img id="rotatingProfile" src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox" alt="Prakash" class="profile-pic"></div>
         <div class="header-text">
             <h1>Community Hub & Services</h1>
             <p>Eastern Ghats Tourism • Quick Delivery • Local Experts</p>
@@ -346,490 +80,134 @@
             </div>
         </div>
     </header>
-
-    <!-- Easy One-Tap Help Bar (Simple for Elders & Everyone) -->
     <div class="quick-help-bar">
         <span>🙏 Need Help? Direct Tap:</span>
         <a href="tel:+918985240287" class="quick-btn call">📞 Call Now (8985240287)</a>
-        <a href="https://wa.me/918985240287?text=Namaste, I need help with a service" class="quick-btn">💬 Send Voice/Text on WhatsApp</a>
+        <a href="https://wa.me/918985240287?text=Namaste, I need help" class="quick-btn">💬 WhatsApp</a>
     </div>
-
-    <!-- 2. Navigation Tabs -->
     <nav>
         <a href="#tourism">Tourism (6)</a>
         <a href="#work">My Work Gallery</a>
-        <a href="#delivery">Quick Delivery</a>
-        <a href="#services">Local Services</a>
+        <a href="#delivery">Delivery (6)</a>
+        <a href="#services">Services (6)</a>
         <a href="#feedback">Feedback</a>
     </nav>
-
     <div class="container">
-
-        <!-- 3. Tourism Section (6 Complete Packages with "Open" Details) -->
         <section id="tourism">
-            <div class="section-header">
-                <h2>Eastern Ghats & Coastal Explorer</h2>
-                <p>Click "Open Spots & Price" on any package to view 6 sightseeing locations and rates.</p>
-            </div>
+            <div class="section-header"><h2>Eastern Ghats & Coastal Explorer</h2><p>Tap "Open (6 Spots)" on any card to view locations and rates.</p></div>
             <div class="grid">
-                <!-- Card 1 -->
-                <div class="card">
-                    <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=600&q=80" alt="Araku Valley">
-                        <span class="price-tag">Starts ₹1,499</span>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <span class="badge">Hill Station</span>
-                            <h3>Araku Valley & Borra Caves</h3>
-                            <p>Tribal coffee plantations, misty viewpoints, and ancient limestone caves.</p>
-                        </div>
-                        <div class="btn-group">
-                            <button class="btn btn-open" onclick="openDetails('araku')">📂 Open (6 Spots & Package Price)</button>
-                            <a href="https://wa.me/918985240287?text=Hi, I want to book Araku Tour" class="btn">Book Trip</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="card">
-                    <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Visakhapatnam">
-                        <span class="price-tag">Starts ₹999</span>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <span class="badge">Coastal</span>
-                            <h3>Visakhapatnam Coastline</h3>
-                            <p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p>
-                        </div>
-                        <div class="btn-group">
-                            <button class="btn btn-open" onclick="openDetails('vizag')">📂 Open (6 Spots & Package Price)</button>
-                            <a href="https://wa.me/918985240287?text=Hi, I want to book Vizag Tour" class="btn">Book Trip</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="card">
-                    <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80" alt="Kasipatnam">
-                        <span class="price-tag">Starts ₹1,199</span>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <span class="badge">Waterfalls</span>
-                            <h3>Kasipatnam & Tyda</h3>
-                            <p>Jungle camp trails, refreshing stream crossings, and hidden waterfalls.</p>
-                        </div>
-                        <div class="btn-group">
-                            <button class="btn btn-open" onclick="openDetails('kasipatnam')">📂 Open (6 Spots & Package Price)</button>
-                            <a href="https://wa.me/918985240287?text=Hi, I want to book Kasipatnam Tour" class="btn">Book Trip</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="card">
-                    <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80" alt="Paderu">
-                        <span class="price-tag">Starts ₹1,399</span>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <span class="badge">Highlands</span>
-                            <h3>Paderu Coffee Highlands</h3>
-                            <p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p>
-                        </div>
-                        <div class="btn-group">
-                            <button class="btn btn-open" onclick="openDetails('paderu')">📂 Open (6 Spots & Package Price)</button>
-                            <a href="https://wa.me/918985240287?text=Hi, I want to book Paderu Tour" class="btn">Book Trip</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="card">
-                    <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80" alt="Vizianagaram">
-                        <span class="price-tag">Starts ₹899</span>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <span class="badge">Heritage</span>
-                            <h3>Vizianagaram Royal Fort</h3>
-                            <p>Historic Gajapathi stone architecture and Ramanarayanam cultural temple.</p>
-                        </div>
-                        <div class="btn-group">
-                            <button class="btn btn-open" onclick="openDetails('vizianagaram')">📂 Open (6 Spots & Package Price)</button>
-                            <a href="https://wa.me/918985240287?text=Hi, I want to book Vizianagaram Tour" class="btn">Book Trip</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6 (Added to complete 6-card layout!) -->
-                <div class="card">
-                    <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Lambasingi">
-                        <span class="price-tag">Starts ₹1,599</span>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <span class="badge">Andhra Kashmir</span>
-                            <h3>Lambasingi & Tajangi</h3>
-                            <p>Misty winter mornings, strawberry farms, anss="social-pill">💬 WhatsApp: 8985240287</a>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹1,499</span></div><div class="card-body"><div><span class="badge">Hill Station</span><h3>Araku Valley & Borra Caves</h3><p>Tribal coffee plantations, misty viewpoints, and limestone caves.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('araku')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Araku Tour" class="btn">Book Trip</a></div></div></div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹999</span></div><div class="card-body"><div><span class="badge">Coastal</span><h3>Visakhapatnam Coastline</h3><p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('vizag')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Vizag Tour" class="btn">Book Trip</a></div></div></div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹1,199</span></div><div class="card-body"><div><span class="badge">Waterfalls</span><h3>Kasipatnam & Tyda</h3><p>Jungle camp trails, refreshing stream crossings, and waterfalls.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('kasipatnam')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Kasipatnam Tour" class="btn">Book Trip</a></div></div></div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹1,399</span></div><div class="card-body"><div><span class="badge">Highlands</span><h3>Paderu Coffee Highlands</h3><p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('paderu')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Paderu Tour" class="btn">Book Trip</a></div></div></div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹899</span></div><div class="card-body"><div><span class="badge">Heritage</span><h3>Vizianagaram Royal Fort</h3><p>Historic Gajapathi stone architecture and Ramanarayanam temple.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('vizianagaram')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Vizianagaram Tour" class="btn">Book Trip</a></div></div></div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹1,599</span></div><div class="card-body"><div><span class="badge">Andhra Kashmir</span><h3>Lambasingi & Tajangi</h3><p>Misty winter mornings, strawberry farms, and Kothapalli waterfalls.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('lambasingi')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Lambasingi Tour" class="btn">Book Trip</a></div></div></div>
+            </div>
+        </section>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Hub & Services | Eastern Ghats Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #14532D; --primary-dark: #0A2E18; --secondary: #9A3412; --accent: #D97706; --surface: #FAF8F5; --container: #F0ECE1; --text-dark: #1C1917; --text-muted: #57534E; --white: #FFFFFF; }
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--surface); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #1E6B3B 100%); color: var(--white); padding: 32px 20px; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; box-shadow: 0 8px 25px rgba(20, 83, 45, 0.25); }
+        .profile-wrapper { position: absolute; left: 28px; width: 90px; height: 90px; border-radius: 50%; padding: 4px; background: linear-gradient(45deg, var(--accent), rgba(255,255,255,0.4)); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); animation: floatProfile 4s ease-in-out infinite; }
+        .profile-pic { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; transition: opacity 0.6s ease-in-out; }
+        @keyframes floatProfile { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
+        .header-text { max-width: 720px; }
+        .header-text h1 { font-size: 34px; letter-spacing: -0.5px; }
+        .header-text p { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+        .header-socials { margin-top: 12px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .social-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.16); color: var(--white); text-decoration: none; padding: 7px 16px; border-radius: 9999px; font-size: 13px; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); }
+        .quick-help-bar { background: #FEF3C7; border-bottom: 2px solid #F59E0B; padding: 12px 16px; display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; text-align: center; }
+        .quick-help-bar span { font-weight: 700; font-size: 14px; color: #78350F; }
+        .quick-btn { background: #15803D; color: white; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
+        .quick-btn.call { background: #B91C1C; }
+        nav { background-color: var(--secondary); position: sticky; top: 0; z-index: 100; display: flex; justify-content: center; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        nav a { color: var(--white); text-decoration: none; padding: 13px 16px; font-size: 14px; font-weight: 600; }
+        nav a:hover { background-color: var(--accent); }
+        .container { max-width: 1240px; margin: 0 auto; padding: 24px 16px; width: 100%; }
+        section { background-color: var(--container); border-radius: 16px; padding: 28px 22px; margin-bottom: 36px; box-shadow: 0 6px 20px rgba(0,0,0,0.05); width: 100%; }
+        .section-header { margin-bottom: 24px; border-bottom: 2px solid #E6E1D3; padding-bottom: 12px; }
+        .section-header h2 { font-size: 28px; color: var(--primary); }
+        .section-header p { color: var(--text-muted); font-size: 14px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; width: 100%; }
+        .card { background-color: var(--surface); border-radius: 14px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.07); transition: transform 0.25s ease; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #E6E1D3; }
+        .card:hover { transform: translateY(-5px); }
+        .card-img-wrap { position: relative; width: 100%; height: 190px; }
+        .card img, .card video { width: 100%; height: 190px; object-fit: cover; background-color: #E6E1D3; display: block; }
+        .price-tag { position: absolute; top: 12px; right: 12px; background: rgba(20, 83, 45, 0.95); color: #FDE68A; padding: 5px 12px; border-radius: 8px; font-size: 13px; font-weight: 700; }
+        .card-body { padding: 18px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+        .badge { display: inline-block; background-color: var(--accent); color: var(--white); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 9999px; margin-bottom: 8px; text-transform: uppercase; width: fit-content; }
+        .card-body h3 { font-size: 20px; color: var(--text-dark); margin-bottom: 6px; }
+        .card-body p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px; }
+        .btn-group { display: flex; gap: 8px; flex-direction: column; }
+        .btn { display: block; text-align: center; background-color: var(--primary); color: var(--white); text-decoration: none; padding: 11px 14px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; width: 100%; }
+        .btn-open { background-color: var(--accent); color: var(--white); }
+        .btn-whatsapp { background-color: #15803D; }
+        .btn-call { background-color: var(--secondary); }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 99999; justify-content: center; align-items: center; padding: 16px; }
+        .modal-box { background: var(--surface); max-width: 820px; width: 100%; max-height: 88vh; overflow-y: auto; border-radius: 16px; padding: 24px; position: relative; }
+        .modal-close { position: sticky; top: 0; float: right; background: #DC2626; color: white; border: none; padding: 7px 14px; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; z-index: 10; }
+        .modal-title { font-size: 24px; color: var(--primary); margin-bottom: 4px; }
+        .modal-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 18px; }
+        .modal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
+        .mini-card { background: white; border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D3; text-align: center; }
+        .mini-card img { width: 100%; height: 130px; object-fit: cover; }
+        .mini-card-info { padding: 10px; }
+        .mini-card-info h4 { font-family: 'Poppins', sans-serif; font-size: 14px; }
+        .mini-card-info span { display: inline-block; margin-top: 4px; background: #DCFCE7; color: #166534; font-weight: 700; font-size: 13px; padding: 2px 10px; border-radius: 6px; }
+        #feedback { background: linear-gradient(rgba(240, 236, 225, 0.85), rgba(240, 236, 225, 0.92)), url('https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox') center/cover no-repeat; }
+        .feedback-box { max-width: 620px; margin: 0 auto; background: rgba(255, 255, 255, 0.95); padding: 24px; border-radius: 14px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--primary); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #D6D3D1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; }
+        footer { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: var(--white); text-align: center; padding: 32px 16px; font-size: 14px; }
+        .footer-links { margin: 14px 0; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .footer-links a { color: #FDBA74; text-decoration: none; font-weight: 600; }
+        @media (max-width: 768px) { header { flex-direction: column; padding: 24px 14px; } .profile-wrapper { position: static; margin-bottom: 12px; width: 84px; height: 84px; } .header-text h1 { font-size: 25px; } nav a { padding: 11px 10px; font-size: 12.5px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-wrapper"><img id="rotatingProfile" src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox" alt="Prakash" class="profile-pic"></div>
+        <div class="header-text">
+            <h1>Community Hub & Services</h1>
+            <p>Eastern Ghats Tourism • Quick Delivery • Local Experts</p>
+            <div class="header-socials">
+                <a href="https://instagram.com/hipraka" target="_blank" class="social-pill">📸 @hipraka</a>
+                <a href="https://wa.me/918985240287" target="_blank" class="social-pill">💬 WhatsApp: 8985240287</a>
             </div>
         </div>
     </header>
-
-    <!-- 2. Navigation Tabs -->
+    <div class="quick-help-bar">
+        <span>🙏 Need Help? Direct Tap:</span>
+        <a href="tel:+918985240287" class="quick-btn call">📞 Call Now (8985240287)</a>
+        <a href="https://wa.me/918985240287?text=Namaste, I need help" class="quick-btn">💬 WhatsApp</a>
+    </div>
     <nav>
-        <a href="#tourism">Tourism</a>
+        <a href="#tourism">Tourism (6)</a>
         <a href="#work">My Work Gallery</a>
-        <a href="#delivery">Quick Delivery</a>
-        <a href="#services">Local Services</a>
+        <a href="#delivery">Delivery (6)</a>
+        <a href="#services">Services (6)</a>
         <a href="#feedback">Feedback</a>
     </nav>
-
     <div class="container">
-
-        <!-- 3. Tourism Section -->
         <section id="tourism">
-            <div class="section-header">
-                <h2>Eastern Ghats & Coastal Explorer</h2>
-                <p>Curated road trips, misty valleys, and cultural heritage tours.</p>
-            </div>
+            <div class="section-header"><h2>Eastern Ghats & Coastal Explorer</h2><p>Tap "Open (6 Spots)" on any card to view locations and rates.</p></div>
             <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=600&q=80" alt="Araku Valley">
-                    <div class="card-body">
-                        <span class="badge">Hill Station</span>
-                        <h3>Araku Valley & Borra Caves</h3>
-                        <p>Tribal coffee plantations, misty viewpoints, and ancient limestone caves.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to book Araku Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Visakhapatnam">
-                    <div class="card-body">
-                        <span class="badge">Coastal</span>
-                        <h3>Visakhapatnam Coastline</h3>
-                        <p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to book Vizag Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80" alt="Kasipatnam">
-                    <div class="card-body">
-                        <span class="badge">Waterfalls</span>
-                        <h3>Kasipatnam & Tyda</h3>
-                        <p>Jungle camp trails, refreshing stream crossings, and hidden waterfalls.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to book Kasipatnam Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80" alt="Paderu">
-                    <div class="card-body">
-                        <span class="badge">Highlands</span>
-                        <h3>Paderu Coffee Highlands</h3>
-                        <p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to book Paderu Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80" alt="Vizianagaram">
-                    <div class="card-body">
-                        <span class="badge">Heritage</span>
-                        <h3>Vizianagaram Royal Fort</h3>
-                        <p>Historic Gajapathi stone architecture and Ramanarayanam cultural temple.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to book Vizianagaram Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹1,499</span></div><div class="card-body"><div><span class="badge">Hill Station</span><h3>Araku Valley & Borra Caves</h3><p>Tribal coffee plantations, misty viewpoints, and limestone caves.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('araku')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Araku Tour" class="btn">Book Trip</a></div></div></div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹999</span></div><div class="card-body"><div><span class="badge">Coastal</span><h3>Visakhapatnam Coastline</h3><p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('vizag')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Vizag Tour" class="btn">Book Trip</a></div></div></div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹1,199</span></div><div class="card-body"><div><span class="badge">Waterfalls</span><h3>Kasipatnam & Tyda</h3><p>Jungle camp trails, refreshing stream crossings, and waterfalls.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('kasipatnam')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Kasipatnam Tour" class="btn">Book Trip</a></div></div></div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹1,399</span></div><div class="card-body"><div><span class="badge">Highlands</span><h3>Paderu Coffee Highlands</h3><p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('paderu')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Paderu Tour" class="btn">Book Trip</a></div></div></div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹899</span></div><div class="card-body"><div><span class="badge">Heritage</span><h3>Vizianagaram Royal Fort</h3><p>Historic Gajapathi stone architecture and Ramanarayanam temple.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('vizianagaram')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Vizianagaram Tour" class="btn">Book Trip</a></div></div></div>
+                <div class="card"><div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80"><span class="price-tag">Starts ₹1,599</span></div><div class="card-body"><div><span class="badge">Andhra Kashmir</span><h3>Lambasingi & Tajangi</h3><p>Misty winter mornings, strawberry farms, and Kothapalli waterfalls.</p></div><div class="btn-group"><button type="button" class="btn btn-open" onclick="openDetails('lambasingi')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Lambasingi Tour" class="btn">Book Trip</a></div></div></div>
             </div>
         </section>
-
-        <!-- 4. My Work Gallery -->
-        <section id="work">
-            <div class="section-header">
-                <h2>My Work & Field Gallery</h2>
-                <p>Live highlights, field snapshots, and project videos.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp" alt="Profile Highlight">
-                    <div class="card-body">
-                        <span class="badge">Featured</span>
-                        <h3>Field Snapshot 1</h3>
-                        <p>Dedicated service and local exploration.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy" alt="Featured Photo 2">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 2</h3>
-                        <p>On-ground service across the region.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi" alt="Featured Photo 3">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 3</h3>
-                        <p>Delivering quality service to our community.</p>
-                    </div>
-                </div>
-
-                <!-- 6 Video Placeholders -->
-                <div class="card">
-                    <video controls><source src="video1.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 1</h3><p>Upload video1.mp4 to GitHub to play.</p></div>
-                </div>
-                <div class="card">
-                    <video controls><source src="video2.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 2</h3><p>Upload video2.mp4 to GitHub to play.</p></div>
-                </div>
-                <div class="card">
-                    <video controls><source src="video3.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 3</h3><p>Upload video3.mp4 to GitHub to play.</p></div>
-                </div>
-                <div class="card">
-                    <video controls><source src="video4.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 4</h3><p>Upload video4.mp4 to GitHub to play.</p></div>
-                </div>
-                <div class="card">
-                    <video controls><source src="video5.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 5</h3><p>Upload video5.mp4 to GitHub to play.</p></div>
-                </div>
-                <div class="card">
-                    <video controls><source src="video6.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 6</h3><p>Upload video6.mp4 to GitHub to play.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Quick Delivery Section -->
-        <section id="delivery">
-            <div class="section-header">
-                <h2>Quick Local Delivery</h2>
-                <p>Fast doorstep delivery for beverages, snacks, and essentials.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Cool Drinks">
-                    <div class="card-body">
-                        <h3>Cool Drinks & Soft Drinks</h3>
-                        <p>Chilled sodas, juices, and energy drinks delivered fast.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to order Cool Drinks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=600&q=80" alt="Snacks">
-                    <div class="card-body">
-                        <h3>Snacks & Refreshments</h3>
-                        <p>Fresh bakery items, chips, and evening snacks.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to order Snacks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=80" alt="Water Delivery">
-                    <div class="card-body">
-                        <h3>Drinking Water Cans</h3>
-                        <p>20L purified mineral water cans for homes & events.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I need Water Cans" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Local Services Directory -->
-        <section id="services">
-            <div class="section-header">
-                <h2>Local Services Directory</h2>
-                <p>Trusted technicians and emergency help just one call away.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Vehicle Mechanic">
-                    <div class="card-body">
-                        <h3>Vehicle Mechanic</h3>
-                        <p>Bike & car breakdown assistance, puncture, and engine repair.</p>
-                        <a href="tel:+918985240287" class="btn btn-call">Call Mechanic</a>
-                    </div>
-                </div>
-                <div class=sm</a>
-        <a href="#work">My Work Gallery</a>
-        <a href="#delivery">Quick Delivery</a>
-        <a href="#services">Local Services</a>
-        <a href="#feedback">Feedback</a>
-    </nav>
-
-    <div class="container">
-
-        <!-- 3. Tourism Section -->
-        <section id="tourism">
-            <div class="section-header">
-                <h2>Eastern Ghats & Coastal Explorer</h2>
-                <p>Curated road trips, misty valleys, and cultural heritage tours.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=600&q=80" alt="Araku Valley">
-                    <div class="card-body">
-                        <span class="badge">Hill Station</span>
-                        <h3>Araku Valley & Borra Caves</h3>
-                        <p>Tribal coffee plantations, misty viewpoints, and ancient limestone caves.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to book Araku Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Visakhapatnam">
-                    <div class="card-body">
-                        <span class="badge">Coastal</span>
-                        <h3>Visakhapatnam Coastline</h3>
-                        <p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to book Vizag Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80" alt="Kasipatnam">
-                    <div class="card-body">
-                        <span class="badge">Waterfalls</span>
-                        <h3>Kasipatnam & Tyda</h3>
-                        <p>Jungle camp trails, refreshing stream crossings, and hidden waterfalls.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to book Kasipatnam Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80" alt="Paderu">
-                    <div class="card-body">
-                        <span class="badge">Highlands</span>
-                        <h3>Paderu Coffee Highlands</h3>
-                        <p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to book Paderu Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80" alt="Vizianagaram">
-                    <div class="card-body">
-                        <span class="badge">Heritage</span>
-                        <h3>Vizianagaram Royal Fort</h3>
-                        <p>Historic Gajapathi stone architecture and Ramanarayanam cultural temple.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to book Vizianagaram Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. My Work Gallery -->
-        <section id="work">
-            <div class="section-header">
-                <h2>My Work & Field Gallery</h2>
-                <p>Live highlights, field snapshots, and project videos.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy" alt="Featured Photo 1">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 1</h3>
-                        <p>On-ground service and local exploration.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi" alt="Featured Photo 2">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 2</h3>
-                        <p>Delivering quality service across the region.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox" alt="Featured Photo 3">
-                    <div class="card-body">
-                        <span class="badge">Profile</span>
-                        <h3>Field Snapshot 3</h3>
-                        <p>Always ready to serve our community.</p>
-                    </div>
-                </div>
-
-                <!-- 6 Video Placeholders -->
-                <div class="card">
-                    <video controls><source src="video1.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 1</h3><p>Upload video1.mp4 to GitHub to play.</p></div>
-                </div>
-                <div class="card">
-                    <video controls><source src="video2.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 2</h3><p>Upload video2.mp4 to GitHub to play.</p></div>
-                </div>
-                <div class="card">
-                    <video controls><source src="video3.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 3</h3><p>Upload video3.mp4 to GitHub to play.</p></div>
-                </div>
-                <div class="card">
-                    <video controls><source src="video4.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 4</h3><p>Upload video4.mp4 to GitHub to play.</p></div>
-                </div>
-                <div class="card">
-                    <video controls><source src="video5.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 5</h3><p>Upload video5.mp4 to GitHub to play.</p></div>
-                </div>
-                <div class="card">
-                    <video controls><source src="video6.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 6</h3><p>Upload video6.mp4 to GitHub to play.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Quick Delivery Section -->
-        <section id="delivery">
-            <div class="section-header">
-                <h2>Quick Local Delivery</h2>
-                <p>Fast doorstep delivery for beverages, snacks, and essentials.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Cool Drinks">
-                    <div class="card-body">
-                        <h3>Cool Drinks & Soft Drinks</h3>
-                        <p>Chilled sodas, juices, and energy drinks delivered fast.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to order Cool Drinks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=600&q=80" alt="Snacks">
-                    <div class="card-body">
-                        <h3>Snacks & Refreshments</h3>
-                        <p>Fresh bakery items, chips, and evening snacks.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I want to order Snacks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=80" alt="Water Delivery">
-                    <div class="card-body">
-                        <h3>Drinking Water Cans</h3>
-                        <p>20L purified mineral water cans for homes & events.</p>
-                        <a href="https://wa.me/918985240287?text=Hi, I need Water Cans" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Local Services Directory -->
-        <section id="services">
-            <div class="section-header">
-                <h2>Local Services Directory</h2>
-                <p>Trusted technicians and emergency help just one call away.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Vehicle Mechanic">
-                    <div class="card-body">
-                        <h3>Vehicle Mechanic</h3>
-                        <p>Bike & car breakdown assistance, puncture, and engine repair.</p>
-                        <a href="tel:+918985240287" class="btn btn-call">Call Mechanic</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Electrician">
-                  
+        
