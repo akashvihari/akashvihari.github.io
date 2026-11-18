@@ -35,7 +35,7 @@
     .search-input { width: 100%; padding: 9px 15px; border: 1.5px solid var(--border); border-radius: 999px; font-size: 13.5px; background: #fff; margin-bottom: 8px; outline: none; }
     .pills-row { display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; }
     .pills-row::-webkit-scrollbar { display: none; }
-    .area-pill { padding: 5px 13px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--surface); border: 1px solid var(--border); white-space: nowrap; }
+    .area-pill { padding: 5px 13px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--surface); border: 1px solid var(--border); white-space: nowrap; transition: 0.2s; }
     .area-pill.active { background: var(--primary); color: #fff; border-color: var(--primary); }
 
     /* Slide-out Side Drawer */
@@ -51,70 +51,74 @@
     .d-title { font-weight: 700; font-size: 13.5px; color: var(--primary); display: block; }
     .d-desc { font-size: 11px; color: var(--muted); display: block; }
 
-    /* 1. FIRST INTERFACE: Transparent Profile Hero + Live Status Board */
+    /* 1. FIRST INTERFACE: Profile Hero + Live Status Board */
     .hero-card { margin: 16px 0; background: linear-gradient(135deg, rgba(20,83,45,0.95), rgba(10,46,24,0.92)), url('https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp') center/cover no-repeat; color: #fff; border-radius: 18px; padding: 22px 18px; box-shadow: 0 10px 28px rgba(20,83,45,0.25); position: relative; overflow: hidden; }
     .hero-top { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .hero-avatar { width: 86px; height: 86px; border-radius: 50%; border: 3px solid var(--accent); overflow: hidden; flex-shrink: 0; background: rgba(255,255,255,0.1); }
-    .hero-avatar img { width: 100%; height: 100%; object-fit: cover; opacity: 0.94; transition: opacity 0.4s; }
+    .hero-avatar { width: 86px; height: 86px; border-radius: 50%; border: 3px solid var(--accent); overflow: hidden; flex-shrink: 0; background: #0A2E18; }
+    .hero-avatar img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s; }
     .hero-details { flex: 1; min-width: 220px; }
     .hero-details h2 { font-size: 24px; color: #fff; margin-bottom: 4px; }
     .hero-details p { font-size: 13px; color: #E2E8F0; margin-bottom: 10px; }
     .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-    .h-tag { background: rgba(255,255,255,0.16); padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid rgba(255,255,255,0.25); }
+    .h-tag { background: rgba(255,255,255,0.16); padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid rgba(255,255,255,0.25); color: #fff; }
 
     /* Live Daily Notice Board */
-    .notice-board { margin-top: 16px; background: rgba(254,243,199,0.96); color: #78350F; border-left: 5px solid #D97706; padding: 12px 14px; border-radius: 10px; font-size: 13px; }
+    .notice-board { margin-top: 16px; background: rgba(254,243,199,0.97); color: #78350F; border-left: 5px solid #D97706; padding: 12px 14px; border-radius: 10px; font-size: 13px; }
     .notice-board strong { color: #9A3412; display: block; font-size: 13.5px; margin-bottom: 2px; }
 
     /* 2. ALL-IN-ONE RAPIDO + SWIGGY UNIFIED FRAME */
-    .combo-frame { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-bottom: 28px; }
+    .combo-frame { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-bottom: 12px; }
     .ride-box { background: linear-gradient(135deg, #FFFBEB, #FEF3C7); border: 2px solid #F59E0B; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
     .rate-strip { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
-    .rate-pill { background: #fff; border: 1px solid #FCD34D; padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; color: #92400E; }
-    .calc-row { display: flex; gap: 8px; align-items: center; background: #fff; padding: 8px 12px; border-radius: 10px; margin-bottom: 12px; border: 1px solid #E5DEC9; }
-    .calc-row input { width: 70px; padding: 6px; border: 1px solid #D6D3D1; border-radius: 6px; font-weight: 700; text-align: center; }
-    .swiggy-box { background: #fff; border: 2px solid #15803D; border-radius: 16px; padding: 20px; }
-    .mini-food-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px dashed var(--border); }
-    .mini-food-item:last-child { border-bottom: none; }
+    .rate-pill { background: #fff; border: 1px solid #FCD34D; padding: 5px 10px; border-radius: 8px; font-size: 12px; font-weight: 700; color: #92400E; }
+    .calc-box { background: #fff; padding: 10px 12px; border-radius: 10px; margin-bottom: 12px; border: 1px solid #E5DEC9; display: flex; flex-direction: column; gap: 8px; }
+    .calc-row { display: flex; gap: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .calc-row input[type="number"] { width: 65px; padding: 5px; border: 1px solid #D6D3D1; border-radius: 6px; font-weight: 700; text-align: center; }
+    .night-label { display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: #9A3412; cursor: pointer; }
+    .swiggy-box { background: #fff; border: 2px solid #15803D; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+    .mini-food-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; border-bottom: 1px dashed var(--border); }
+    .mini-food-item:last-of-type { border-bottom: none; }
     .mini-food-left { display: flex; align-items: center; gap: 10px; }
-    .mini-food-left img { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; }
+    .mini-food-left img { width: 48px; height: 48px; border-radius: 10px; object-fit: cover; background: var(--surface); }
 
     /* Sections & Grids */
-    .app-section { padding: 18px 0 32px; }
+    .app-section { padding: 18px 0 28px; }
     .app-section.hidden-view { display: none; }
     .sec-head { margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 8px; }
-    .sec-head h2 { font-size: 24px; color: var(--primary); }
+    .sec-head h2 { font-size: 23px; color: var(--primary); }
     .sec-head p { font-size: 13px; color: var(--muted); }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
 
     /* Cards */
     .card { background: var(--card); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }
-    .card-img { position: relative; height: 185px; background: var(--surface); }
-    .card-img img, .card video { width: 100%; height: 185px; object-fit: cover; display: block; }
-    .price-badge { position: absolute; top: 10px; right: 10px; background: rgba(20,83,45,0.95); color: #FDE68A; font-size: 13px; font-weight: 700; padding: 4px 11px; border-radius: 8px; }
-    .area-badge { position: absolute; top: 10px; left: 10px; background: rgba(154,52,18,0.92); color: #fff; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+    .card-img { position: relative; height: 185px; background: #1C1917; overflow: hidden; }
+    .card-img img, .card-img video { width: 100%; height: 185px; object-fit: cover; display: block; }
+    .price-badge { position: absolute; top: 10px; right: 10px; background: rgba(20,83,45,0.95); color: #FDE68A; font-size: 12.5px; font-weight: 700; padding: 4px 11px; border-radius: 8px; z-index: 2; }
+    .area-badge { position: absolute; top: 10px; left: 10px; background: rgba(154,52,18,0.92); color: #fff; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 999px; z-index: 2; }
     .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .card-body h3 { font-size: 18.5px; margin-bottom: 4px; color: var(--text); }
+    .card-body h3 { font-size: 18px; margin-bottom: 4px; color: var(--text); }
     .card-body p { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
-    .loc-link { display: inline-flex; align-items: center; gap: 4px; font-size: 12.5px; font-weight: 600; color: var(--secondary); background: #FEF2F2; padding: 4px 10px; border-radius: 6px; margin-bottom: 12px; }
+    .loc-link { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: var(--secondary); background: #FEF2F2; padding: 4px 10px; border-radius: 6px; margin-bottom: 12px; }
     .btn-row { display: flex; gap: 8px; flex-direction: column; }
     .btn-split { display: flex; gap: 8px; }
-    .btn { flex: 1; text-align: center; padding: 10px 12px; border-radius: 9px; font-size: 13.5px; font-weight: 600; color: #fff; background: var(--primary); display: block; }
+    .btn { flex: 1; text-align: center; padding: 10px 12px; border-radius: 9px; font-size: 13px; font-weight: 600; color: #fff; background: var(--primary); display: block; }
     .btn-amber { background: var(--accent); }
     .btn-wa { background: #15803D; }
     .btn-terra { background: var(--secondary); }
     .btn-light { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
 
     /* Modal & Footer */
-    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center; padding: 14px; }
-    .modal-box { background: var(--bg); max-width: 800px; width: 100%; max-height: 86vh; overflow-y: auto; border-radius: 16px; padding: 20px; }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.82); z-index: 9999; justify-content: center; align-items: center; padding: 14px; }
+    .modal-box { background: var(--bg); max-width: 820px; width: 100%; max-height: 86vh; overflow-y: auto; border-radius: 16px; padding: 20px; }
     .modal-close { float: right; background: #DC2626; color: #fff; padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 13px; }
-    .modal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 16px 0; }
-    .mini-card { background: #fff; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); text-align: center; }
-    .mini-card img { width: 100%; height: 115px; object-fit: cover; }
-    .mini-card div { padding: 8px; }
-    .mini-card h4 { font-family: 'Poppins', sans-serif; font-size: 13px; }
-    .mini-card span { display: inline-block; margin-top: 3px; background: #DCFCE7; color: #166534; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+    .modal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 12px; margin: 16px 0; }
+    .mini-card { background: #fff; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
+    .mini-card img { width: 100%; height: 110px; object-fit: cover; background: var(--surface); }
+    .mini-card-info { padding: 8px; }
+    .mini-card-info h4 { font-family: 'Poppins', sans-serif; font-size: 13px; color: var(--text); }
+    .mini-card-info span { display: inline-block; margin-top: 3px; background: #DCFCE7; color: #166534; font-weight: 700; font-size: 11.5px; padding: 2px 8px; border-radius: 6px; }
+    .mini-book-btn { display: block; background: #15803D; color: #fff; font-size: 11.5px; font-weight: 600; padding: 6px; margin: 6px 8px 8px; border-radius: 6px; }
+
     footer { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: #fff; text-align: center; padding: 28px 16px; font-size: 13.5px; margin-top: 24px; }
     footer a { color: #FDBA74; font-weight: 600; margin: 0 8px; }
   </style>
@@ -133,9 +137,9 @@
           </div>
         </div>
         <div class="top-actions">
-          <a href="https://instagram.com/hipraka" target="_blank" class="act-btn" style="background:#C13584;">📸</a>
-          <a href="tel:+918985240287" class="act-btn act-call">📞</a>
-          <a href="https://wa.me/918985240287" target="_blank" class="act-btn act-wa">💬</a>
+          <a href="https://instagram.com/hipraka" target="_blank" class="act-btn" style="background:#C13584;" title="Instagram">📸</a>
+          <a href="tel:+918985240287" class="act-btn act-call" title="Call Now">📞</a>
+          <a href="https://wa.me/918985240287" target="_blank" class="act-btn act-wa" title="WhatsApp">💬</a>
         </div>
       </div>
       <div class="filter-bar">
@@ -166,17 +170,17 @@
       <button class="drawer-item" onclick="switchView('guide-sec', this)"><div class="d-icon">📍</div><div><span class="d-title">Local Area Pocket Guide</span><span class="d-desc">Mechanic Sheds, Tea, Cloths, Wines</span></div></button>
       <button class="drawer-item" onclick="switchView('tourism-sec', this)"><div class="d-icon">🏔️</div><div><span class="d-title">Tourism Packages (6)</span><span class="d-desc">Araku, Vizag, Lambasingi Tours</span></div></button>
       <button class="drawer-item" onclick="switchView('services-sec', this)"><div class="d-icon">🔧</div><div><span class="d-title">Services & Labour (6)</span><span class="d-desc">Mechanic, Electrician, Helpers</span></div></button>
-      <button class="drawer-item" onclick="switchView('gallery-sec', this)"><div class="d-icon">📸</div><div><span class="d-title">Work Gallery & Videos</span><span class="d-desc">Field Photos & Customer Reviews</span></div></button>
+      <button class="drawer-item" onclick="switchView('gallery-sec', this)"><div class="d-icon">📸</div><div><span class="d-title">Work Gallery & Videos</span><span class="d-desc">Field Photos & Live Action Clips</span></div></button>
     </div>
   </aside>
 
   <main class="container">
 
-    <!-- 1. FIRST INTERFACE: Transparent Profile Card + Live Daily Notice Board -->
+    <!-- 1. FIRST INTERFACE: Profile Card + Live Daily Notice Board -->
     <div class="hero-card">
       <div class="hero-top">
         <div class="hero-avatar">
-          <img id="rotatingProfile" src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/u5mdsajyujrzy3i3ejdk" alt="Prakash">
+          <img id="rotatingProfile" src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp" alt="Prakash">
         </div>
         <div class="hero-details">
           <h2>Prakash • Local Partner & Guide</h2>
@@ -188,7 +192,6 @@
           </div>
         </div>
       </div>
-      <!-- EDITABLE DAILY UPDATE NOTICE BOARD -->
       <div class="notice-board">
         <strong>📢 Today's Live Status & Update:</strong>
         🟢 Personal Bike Drop & Local Delivery Active Today! (Note: If Rapido app is busy/unavailable, book direct safe ride or emergency drop here).
@@ -207,50 +210,57 @@
         <div class="ride-box">
           <div>
             <span style="background:#D97706;color:#fff;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;">🛡️ 100% SAFE RIDE • EXTRA HELMET</span>
-            <h3 style="font-size:22px;color:#78350F;margin-top:8px;">Personal Bike Drop & Emergency Pickup</h3>
+            <h3 style="font-size:21px;color:#78350F;margin-top:8px;">Personal Bike Drop & Emergency Pickup</h3>
             <p style="font-size:13px;color:#92400E;margin-top:4px;">Bus stop drop, station pickup, hospital emergency, or night safe drop across S.Kota, Tatipudi & Kasipatnam.</p>
             <div class="rate-strip">
               <span class="rate-pill">Base (0–3 KM): ₹30</span>
               <span class="rate-pill">After 3 KM: ₹10 / KM</span>
               <span class="rate-pill">Night / Emergency: +₹20</span>
             </div>
-            <div class="calc-row">
-              <span style="font-size:13px;font-weight:600;">Estimate KM:</span>
-              <input type="number" id="kmInput" value="5" min="1" oninput="calcFare()">
-              <span style="font-size:14px;font-weight:700;color:#14532D;">Est. Fare: ₹<span id="fareOut">50</span></span>
+            <div class="calc-box">
+              <div class="calc-row">
+                <span style="font-size:13px;font-weight:600;">Distance (KM): <input type="number" id="kmInput" value="5" min="1" oninput="calcFare()"></span>
+                <span style="font-size:15px;font-weight:700;color:#14532D;">Est. Fare: ₹<span id="fareOut">50</span></span>
+              </div>
+              <label class="night-label">
+                <input type="checkbox" id="nightCheck" onchange="calcFare()"> Add Night / Emergency Charge (+₹20)
+              </label>
             </div>
           </div>
           <div class="btn-split">
             <button onclick="shareLiveGPS()" class="btn btn-wa">📍 Send Pickup GPS</button>
-            <a href="tel:+918985240287" class="btn btn-terra">📞 Call for Ride</a>
+            <a id="bookRideWa" href="https://wa.me/918985240287?text=Hi%20Prakash,%20I%20need%20a%20Bike%20Ride%20for%205%20KM%20(Est.%20Fare:%20₹50)" target="_blank" class="btn btn-terra">🏍️ Book This Ride</a>
           </div>
         </div>
 
         <!-- Right: Express Swiggy-Style Food & Drinks -->
         <div class="swiggy-box">
-          <span style="background:#15803D;color:#fff;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;">⚡ 30-MIN EXPRESS DELIVERY</span>
-          <h3 style="font-size:21px;color:var(--primary);margin:8px 0;">Hot Food & Chilled Drinks Menu</h3>
-          <div class="mini-food-item">
-            <div class="mini-food-left">
-              <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=200&q=80">
-              <div><strong style="font-size:14px;">Chicken Dum Biryani / Meals</strong><div style="font-size:12px;color:#15803D;font-weight:700;">₹140 (Hot Pack)</div></div>
+          <div>
+            <span style="background:#15803D;color:#fff;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;">⚡ 30-MIN EXPRESS DELIVERY</span>
+            <h3 style="font-size:21px;color:var(--primary);margin:8px 0;">Hot Food, Groceries & Medicines</h3>
+            <div class="mini-food-item">
+              <div class="mini-food-left">
+                <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=200&q=80" alt="Biryani">
+                <div><strong style="font-size:13.5px;">Chicken Dum Biryani / Meals</strong><div style="font-size:12px;color:#15803D;font-weight:700;">₹140 (Hot Pack)</div></div>
+              </div>
+              <a href="https://wa.me/918985240287?text=Order:%20Chicken%20Dum%20Biryani%20(₹140)" target="_blank" class="btn btn-wa" style="flex:0;padding:7px 14px;">Order</a>
             </div>
-            <a href="https://wa.me/918985240287?text=Order: Chicken Dum Biryani (₹140)" class="btn btn-wa" style="flex:0;padding:7px 14px;">Order</a>
-          </div>
-          <div class="mini-food-item">
-            <div class="mini-food-left">
-              <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=200&q=80">
-              <div><strong style="font-size:14px;">Evening Snacks + Ginger Tea</strong><div style="font-size:12px;color:#15803D;font-weight:700;">₹50 Combo</div></div>
+            <div class="mini-food-item">
+              <div class="mini-food-left">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=200&q=80" alt="Tea Snacks">
+                <div><strong style="font-size:13.5px;">Evening Snacks + Ginger Tea</strong><div style="font-size:12px;color:#15803D;font-weight:700;">₹50 Combo</div></div>
+              </div>
+              <a href="https://wa.me/918985240287?text=Order:%20Snacks%20+%20Ginger%20Tea%20Combo%20(₹50)" target="_blank" class="btn btn-wa" style="flex:0;padding:7px 14px;">Order</a>
             </div>
-            <a href="https://wa.me/918985240287?text=Order: Snacks + Ginger Tea Combo (₹50)" class="btn btn-wa" style="flex:0;padding:7px 14px;">Order</a>
-          </div>
-          <div class="mini-food-item">
-            <div class="mini-food-left">
-              <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=200&q=80">
-              <div><strong style="font-size:14px;">20L Water Can + Cool Drinks</strong><div style="font-size:12px;color:#15803D;font-weight:700;">From ₹35</div></div>
+            <div class="mini-food-item">
+              <div class="mini-food-left">
+                <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=200&q=80" alt="Water Can">
+                <div><strong style="font-size:13.5px;">20L Water Can + Cool Drinks</strong><div style="font-size:12px;color:#15803D;font-weight:700;">From ₹35</div></div>
+              </div>
+              <a href="https://wa.me/918985240287?text=Order:%20Water%20Can%20/%20Cool%20Drinks" target="_blank" class="btn btn-wa" style="flex:0;padding:7px 14px;">Order</a>
             </div>
-            <a href="https://wa.me/918985240287?text=Order: Water Can / Cool Drinks" class="btn btn-wa" style="flex:0;padding:7px 14px;">Order</a>
           </div>
+          <a href="https://wa.me/918985240287?text=Hi%20Prakash,%20I%20want%20custom%20doorstep%20delivery%20(Tiffin%20/%20Medicines%20/%20Groceries):" target="_blank" class="btn btn-amber" style="margin-top:10px;">🛍️ Order Custom Tiffin / Medicines / Anything</a>
         </div>
       </div>
     </section>
@@ -263,43 +273,44 @@
       </div>
       <div class="grid">
         <div class="card filterable" data-area="S.Kota" data-tags="earphones mobile accessories store sales">
-          <div class="card-img"><span class="price-badge">₹299 Fixed</span><img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80"></div>
+          <div class="card-img"><span class="price-badge">₹299 Fixed</span><img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80" alt="Earphones"></div>
           <div class="card-body">
             <div>
               <h3>Clear-Voice Wired Earphones (Black)</h3>
               <p>Deep bass, HD mic for clear calls • Brand new sealed pack.</p>
               <a href="https://maps.google.com/?q=Srungavarapukota" target="_blank" class="loc-link">📍 Available at: S.Kota / Kiltampalem (View Map)</a>
             </div>
-            <a href="https://wa.me/918985240287?text=Hi, I want to buy Wired Earphones (₹299 Fixed)" class="btn btn-wa">💬 Buy Now (Cash on Delivery)</a>
+            <a href="https://wa.me/918985240287?text=Hi,%20I%20want%20to%20buy%20Wired%20Earphones%20(₹299%20Fixed)" target="_blank" class="btn btn-wa">💬 Buy Now (Cash on Delivery)</a>
           </div>
         </div>
 
         <div class="card filterable" data-area="Tatipudi" data-tags="water pump dispenser home store sales">
-          <div class="card-img"><span class="price-badge">₹180 Fixed</span><img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=600&q=80"></div>
+          <div class="card-img"><span class="price-badge">₹180 Fixed</span><img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=600&q=80" alt="Water Pump"></div>
           <div class="card-body">
             <div>
               <h3>20L Water Can Easy Dispenser Pump</h3>
               <p>Fits all standard 20L mineral water cans • Easy press for elders.</p>
               <a href="https://maps.google.com/?q=Tatipudi" target="_blank" class="loc-link">📍 Available at: Tatipudi / Boddavara (View Map)</a>
             </div>
-            <a href="https://wa.me/918985240287?text=Hi, I want to buy 20L Water Dispenser Pump (₹180)" class="btn btn-wa">💬 Buy Now (Cash on Delivery)</a>
+            <a href="https://wa.me/918985240287?text=Hi,%20I%20want%20to%20buy%2020L%20Water%20Dispenser%20Pump%20(₹180)" target="_blank" class="btn btn-wa">💬 Buy Now (Cash on Delivery)</a>
           </div>
         </div>
 
         <div class="card filterable" data-area="Araku" data-tags="araku coffee powder organic honey store sales">
-          <div class="card-img"><span class="price-badge">₹250 Fixed</span><img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=80"></div>
+          <div class="card-img"><span class="price-badge">₹250 Fixed</span><img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=80" alt="Araku Coffee"></div>
           <div class="card-body">
             <div>
               <h3>Pure Araku Filter Coffee & Forest Honey</h3>
               <p>100% organic tribal harvest • Freshly packed 500g pack.</p>
               <a href="https://maps.google.com/?q=Araku+Valley" target="_blank" class="loc-link">📍 Available at: Araku / Kasipatnam (View Map)</a>
             </div>
-            <a href="https://wa.me/918985240287?text=Hi, I want to buy Araku Coffee / Honey Pack (₹250)" class="btn btn-wa">💬 Buy Now (Cash on Delivery)</a>
+            <a href="https://wa.me/918985240287?text=Hi,%20I%20want%20to%20buy%20Araku%20Coffee%20/%20Honey%20Pack%20(₹250)" target="_blank" class="btn btn-wa">💬 Buy Now (Cash on Delivery)</a>
           </div>
         </div>
       </div>
     </section>
-    <!-- 4. LOCAL AREA POCKET GUIDE (Mechanic Sheds, Best Tea, Cloths, Wines, Medical) -->
+
+    <!-- 4. LOCAL AREA POCKET GUIDE -->
     <section id="guide-sec" class="app-section">
       <div class="sec-head">
         <h2>📍 Local Area Pocket Guide & Maps</h2>
@@ -307,45 +318,45 @@
       </div>
       <div class="grid">
         <div class="card filterable" data-area="Kasipatnam" data-tags="mechanic shed puncture bike repair kasipatnam">
-          <div class="card-img"><span class="area-badge">Kasipatnam</span><img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80"></div>
+          <div class="card-img"><span class="area-badge">Kasipatnam</span><img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Mechanic Shed"></div>
           <div class="card-body">
             <div><h3>Highway Bike & Car Mechanic Shed</h3><p>Near Kasipatnam Ghat Junction • Puncture, Chain & Breakdown.</p></div>
             <div class="btn-split">
               <a href="https://maps.google.com/?q=Kasipatnam+Andhra+Pradesh" target="_blank" class="btn btn-light">🗺️ Google Maps</a>
-              <a href="https://wa.me/918985240287?text=Need Mechanic Shed info/help at Kasipatnam" class="btn btn-wa">💬 Contact</a>
+              <a href="https://wa.me/918985240287?text=Need%20Mechanic%20Shed%20info/help%20at%20Kasipatnam" target="_blank" class="btn btn-wa">💬 Contact</a>
             </div>
           </div>
         </div>
 
         <div class="card filterable" data-area="Tatipudi" data-tags="tea time snacks tiffin coffee tatipudi">
-          <div class="card-img"><span class="area-badge">Tatipudi</span><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80"></div>
+          <div class="card-img"><span class="area-badge">Tatipudi</span><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" alt="Tea Point"></div>
           <div class="card-body">
             <div><h3>Best Tea Time & Tiffin Point</h3><p>Tatipudi Reservoir Road • Ginger Dum Tea, Samosa & Tiffins.</p></div>
             <div class="btn-split">
               <a href="https://maps.google.com/?q=Tatipudi+Reservoir" target="_blank" class="btn btn-light">🗺️ Google Maps</a>
-              <a href="https://wa.me/918985240287?text=Want Tea/Snacks info at Tatipudi" class="btn btn-wa">💬 Contact</a>
+              <a href="https://wa.me/918985240287?text=Want%20Tea/Snacks%20info%20at%20Tatipudi" target="_blank" class="btn btn-wa">💬 Contact</a>
             </div>
           </div>
         </div>
 
         <div class="card filterable" data-area="S.Kota" data-tags="cloths garments dress shopping s.kota">
-          <div class="card-img"><span class="area-badge">S.Kota</span><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80"></div>
+          <div class="card-img"><span class="area-badge">S.Kota</span><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Cloth Shop"></div>
           <div class="card-body">
             <div><h3>Best Cloths & Family Readymades</h3><p>S.Kota Main Road • Daily wear, sarees & kids garments.</p></div>
             <div class="btn-split">
               <a href="https://maps.google.com/?q=Srungavarapukota+Main+Road" target="_blank" class="btn btn-light">🗺️ Google Maps</a>
-              <a href="https://wa.me/918985240287?text=Need Cloths shop details in S.Kota" class="btn btn-wa">💬 Contact</a>
+              <a href="https://wa.me/918985240287?text=Need%20Cloths%20shop%20details%20in%20S.Kota" target="_blank" class="btn btn-wa">💬 Contact</a>
             </div>
           </div>
         </div>
 
         <div class="card filterable" data-area="Kasipatnam" data-tags="wines beverages cold drinks bar kasipatnam s.kota">
-          <div class="card-img"><span class="area-badge">Kasipatnam / S.Kota</span><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80"></div>
+          <div class="card-img"><span class="area-badge">Kasipatnam / S.Kota</span><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Beverages"></div>
           <div class="card-body">
             <div><h3>Govt. Wines & Cold Beverages</h3><p>Highway Point • Chilled beverages & party essentials guide.</p></div>
             <div class="btn-split">
               <a href="https://maps.google.com/?q=Kasipatnam+Junction" target="_blank" class="btn btn-light">🗺️ Google Maps</a>
-              <a href="https://wa.me/918985240287?text=Need nearby Wines & Beverages location" class="btn btn-wa">💬 Contact</a>
+              <a href="https://wa.me/918985240287?text=Need%20nearby%20Wines%20&%20Beverages%20location" target="_blank" class="btn btn-wa">💬 Contact</a>
             </div>
           </div>
         </div>
@@ -356,12 +367,12 @@
     <section id="tourism-sec" class="app-section">
       <div class="sec-head"><h2>🏔️ Eastern Ghats & Coastal Tourism (6 Packages)</h2><p>Tap "Open (6 Spots)" to see sightseeing photos & package prices.</p></div>
       <div class="grid">
-        <div class="card filterable" data-area="Araku" data-tags="araku borra caves coffee tourism"><div class="card-img"><span class="price-badge">₹1,499</span><img src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Araku Valley & Borra Caves</h3><p>Coffee plantations, misty viewpoints & limestone caves.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('araku')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Araku Tour" class="btn">Book Trip</a></div></div></div>
-        <div class="card filterable" data-area="Visakhapatnam" data-tags="vizag visakhapatnam beach kailasagiri tourism"><div class="card-img"><span class="price-badge">₹999</span><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Visakhapatnam Coastline</h3><p>RK Beach, Kailasagiri hilltop & Rushikonda serenity.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('vizag')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Vizag Tour" class="btn">Book Trip</a></div></div></div>
-        <div class="card filterable" data-area="Kasipatnam" data-tags="kasipatnam tyda waterfalls tourism"><div class="card-img"><span class="price-badge">₹1,199</span><img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Kasipatnam & Tyda Jungle</h3><p>Jungle camp trails, streams & hidden waterfalls.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('kasipatnam')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Kasipatnam Tour" class="btn">Book Trip</a></div></div></div>
-        <div class="card filterable" data-area="Araku" data-tags="paderu vanjangi clouds tourism"><div class="card-img"><span class="price-badge">₹1,399</span><img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Paderu & Vanjangi Hills</h3><p>Cloud-kissed sunrise viewpoints & organic turmeric farms.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('paderu')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Paderu Tour" class="btn">Book Trip</a></div></div></div>
-        <div class="card filterable" data-area="S.Kota" data-tags="vizianagaram fort temple heritage tourism"><div class="card-img"><span class="price-badge">₹899</span><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Vizianagaram Royal Fort</h3><p>Gajapathi fort architecture & Ramanarayanam temple.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('vizianagaram')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Vizianagaram Tour" class="btn">Book Trip</a></div></div></div>
-        <div class="card filterable" data-area="Araku" data-tags="lambasingi tajangi waterfalls tourism"><div class="card-img"><span class="price-badge">₹1,599</span><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Lambasingi & Tajangi</h3><p>Andhra Kashmir mist, strawberry farms & waterfalls.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('lambasingi')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book Lambasingi Tour" class="btn">Book Trip</a></div></div></div>
+        <div class="card filterable" data-area="Araku" data-tags="araku borra caves coffee tourism"><div class="card-img"><span class="price-badge">₹1,499</span><img src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=600&q=80" alt="Araku"></div><div class="card-body"><div><h3>Araku Valley & Borra Caves</h3><p>Coffee plantations, misty viewpoints & limestone caves.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('araku')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book%20Araku%20Tour" target="_blank" class="btn">Book Trip</a></div></div></div>
+        <div class="card filterable" data-area="Visakhapatnam" data-tags="vizag visakhapatnam beach kailasagiri tourism"><div class="card-img"><span class="price-badge">₹999</span><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Vizag"></div><div class="card-body"><div><h3>Visakhapatnam Coastline</h3><p>RK Beach, Kailasagiri hilltop & Rushikonda serenity.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('vizag')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book%20Vizag%20Tour" target="_blank" class="btn">Book Trip</a></div></div></div>
+        <div class="card filterable" data-area="Kasipatnam" data-tags="kasipatnam tyda waterfalls tourism"><div class="card-img"><span class="price-badge">₹1,199</span><img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80" alt="Kasipatnam"></div><div class="card-body"><div><h3>Kasipatnam & Tyda Jungle</h3><p>Jungle camp trails, streams & hidden waterfalls.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('kasipatnam')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book%20Kasipatnam%20Tour" target="_blank" class="btn">Book Trip</a></div></div></div>
+        <div class="card filterable" data-area="Araku" data-tags="paderu vanjangi clouds tourism"><div class="card-img"><span class="price-badge">₹1,399</span><img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80" alt="Paderu"></div><div class="card-body"><div><h3>Paderu & Vanjangi Hills</h3><p>Cloud-kissed sunrise viewpoints & organic turmeric farms.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('paderu')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book%20Paderu%20Tour" target="_blank" class="btn">Book Trip</a></div></div></div>
+        <div class="card filterable" data-area="S.Kota" data-tags="vizianagaram fort temple heritage tourism"><div class="card-img"><span class="price-badge">₹899</span><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80" alt="Vizianagaram"></div><div class="card-body"><div><h3>Vizianagaram Royal Fort</h3><p>Gajapathi fort architecture & Ramanarayanam temple.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('vizianagaram')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book%20Vizianagaram%20Tour" target="_blank" class="btn">Book Trip</a></div></div></div>
+        <div class="card filterable" data-area="Araku" data-tags="lambasingi tajangi waterfalls tourism"><div class="card-img"><span class="price-badge">₹1,599</span><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Lambasingi"></div><div class="card-body"><div><h3>Lambasingi & Tajangi</h3><p>Andhra Kashmir mist, strawberry farms & waterfalls.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('lambasingi')">📂 Open (6 Spots & Price)</button><a href="https://wa.me/918985240287?text=Book%20Lambasingi%20Tour" target="_blank" class="btn">Book Trip</a></div></div></div>
       </div>
     </section>
 
@@ -369,29 +380,78 @@
     <section id="services-sec" class="app-section">
       <div class="sec-head"><h2>🔧 Local Services & Labour Supply (6 Categories)</h2><p>Tap "Open (6 Works & Charges)" to view services and minimum rates.</p></div>
       <div class="grid">
-        <div class="card filterable" data-area="All" data-tags="mechanic puncture bike car engine service"><div class="card-img"><span class="price-badge">Visit ₹100</span><img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Vehicle Mechanic</h3><p>Bike & car breakdown help, puncture & engine repair.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('mechanic')">📂 Open (6 Repairs & Charges)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call Mechanic</a></div></div></div>
-        <div class="card filterable" data-area="All" data-tags="electrician fan wiring inverter switch service"><div class="card-img"><span class="price-badge">Visit ₹100</span><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Electrician</h3><p>House wiring, switchboard repair, fan & inverter setup.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('electrician')">📂 Open (6 Works & Charges)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call Electrician</a></div></div></div>
-        <div class="card filterable" data-area="All" data-tags="plumber tap pipe motor tank cleaning service"><div class="card-img"><span class="price-badge">Visit ₹100</span><img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Plumber</h3><p>Tap leaks, pipe fittings, motor repair & tank cleaning.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('plumber')">📂 Open (6 Works & Charges)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call Plumber</a></div></div></div>
-        <div class="card filterable" data-area="All" data-tags="labour helpers workers loading construction manpower"><div class="card-img"><span class="price-badge">Daily / Shift</span><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Labour & Manpower Supply</h3><p>Loading/unloading workers, mason helpers & event staff.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('labour')">📂 Open (6 Labour Types & Rates)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call for Labour</a></div></div></div>
-        <div class="card filterable" data-area="All" data-tags="water tanker bulk supply construction marriage"><div class="card-img"><span class="price-badge">From ₹500</span><img src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Bulk Water Tanker Supply</h3><p>Water tankers for functions, apartments & construction.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('tanker')">📂 Open (6 Tanker Sizes & Rates)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call Water Tanker</a></div></div></div>
-        <div class="card filterable" data-area="All" data-tags="auto transport shifting goods pickup"><div class="card-img"><span class="price-badge">From ₹300</span><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"></div><div class="card-body"><div><h3>Auto & Mini Transport</h3><p>Local goods transport, house shifting & luggage pickup.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('transport')">📂 Open (6 Vehicles & Rates)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call Transport</a></div></div></div>
+        <div class="card filterable" data-area="All" data-tags="mechanic puncture bike car engine service"><div class="card-img"><span class="price-badge">Visit ₹100</span><img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Mechanic"></div><div class="card-body"><div><h3>Vehicle Mechanic</h3><p>Bike & car breakdown help, puncture & engine repair.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('mechanic')">📂 Open (6 Repairs & Charges)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call Mechanic</a></div></div></div>
+        <div class="card filterable" data-area="All" data-tags="electrician fan wiring inverter switch service"><div class="card-img"><span class="price-badge">Visit ₹100</span><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Electrician"></div><div class="card-body"><div><h3>Electrician</h3><p>House wiring, switchboard repair, fan & inverter setup.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('electrician')">📂 Open (6 Works & Charges)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call Electrician</a></div></div></div>
+        <div class="card filterable" data-area="All" data-tags="plumber tap pipe motor tank cleaning service"><div class="card-img"><span class="price-badge">Visit ₹100</span><img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=600&q=80" alt="Plumber"></div><div class="card-body"><div><h3>Plumber</h3><p>Tap leaks, pipe fittings, motor repair & tank cleaning.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('plumber')">📂 Open (6 Works & Charges)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call Plumber</a></div></div></div>
+        <div class="card filterable" data-area="All" data-tags="labour helpers workers loading construction manpower"><div class="card-img"><span class="price-badge">Daily / Shift</span><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Labour"></div><div class="card-body"><div><h3>Labour & Manpower Supply</h3><p>Loading/unloading workers, mason helpers & event staff.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('labour')">📂 Open (6 Labour Types & Rates)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call for Labour</a></div></div></div>
+        <div class="card filterable" data-area="All" data-tags="water tanker bulk supply construction marriage"><div class="card-img"><span class="price-badge">From ₹500</span><img src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=600&q=80" alt="Tanker"></div><div class="card-body"><div><h3>Bulk Water Tanker Supply</h3><p>Water tankers for functions, apartments & construction.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('tanker')">📂 Open (6 Tanker Sizes & Rates)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call Water Tanker</a></div></div></div>
+        <div class="card filterable" data-area="All" data-tags="auto transport shifting goods pickup"><div class="card-img"><span class="price-badge">From ₹300</span><img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=600&q=80" alt="Transport"></div><div class="card-body"><div><h3>Auto & Mini Transport</h3><p>Local goods transport, house shifting & luggage pickup.</p></div><div class="btn-row"><button class="btn btn-amber" onclick="openDetails('transport')">📂 Open (6 Vehicles & Rates)</button><a href="tel:+918985240287" class="btn btn-terra">📞 Call Transport</a></div></div></div>
       </div>
     </section>
 
-    <!-- 7. WORK GALLERY (Your 4 Cloudinary Photos + 6 Videos) -->
+    <!-- 7. WORK GALLERY (Your 4 Cloudinary Photos + 6 Live Working HD Clips) -->
     <section id="gallery-sec" class="app-section">
-      <div class="sec-head"><h2>📸 My Work Gallery & Field Highlights</h2><p>Real field photos and videos from our services.</p></div>
+      <div class="sec-head"><h2>📸 My Work Gallery & Field Highlights</h2><p>Real field photos and action clips from our rides, tourism & local services.</p></div>
       <div class="grid">
-        <div class="card"><div class="card-img"><img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp"></div><div class="card-body"><h3>Field Snapshot 1</h3><p>Ready for rides, delivery & local guidance.</p></div></div>
-        <div class="card"><div class="card-img"><img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox"></div><div class="card-body"><h3>Field Snapshot 2</h3><p>Dedicated service and local exploration.</p></div></div>
-        <div class="card"><div class="card-img"><img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy"></div><div class="card-body"><h3>Field Snapshot 3</h3><p>On-ground service across the region.</p></div></div>
-        <div class="card"><div class="card-img"><img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi"></div><div class="card-body"><h3>Field Snapshot 4</h3><p>Delivering quality service to our community.</p></div></div>
-        <div class="card"><video controls><source src="video1.mp4" type="video/mp4"></video><div class="card-body"><h3>Work Video 1</h3><p>Upload video1.mp4 to GitHub.</p></div></div>
-        <div class="card"><video controls><source src="video2.mp4" type="video/mp4"></video><div class="card-body"><h3>Work Video 2</h3><p>Upload video2.mp4 to GitHub.</p></div></div>
-        <div class="card"><video controls><source src="video3.mp4" type="video/mp4"></video><div class="card-body"><h3>Work Video 3</h3><p>Upload video3.mp4 to GitHub.</p></div></div>
-        <div class="card"><video controls><source src="video4.mp4" type="video/mp4"></video><div class="card-body"><h3>Work Video 4</h3><p>Upload video4.mp4 to GitHub.</p></div></div>
-        <div class="card"><video controls><source src="video5.mp4" type="video/mp4"></video><div class="card-body"><h3>Work Video 5</h3><p>Upload video5.mp4 to GitHub.</p></div></div>
-        <div class="card"><video controls><source src="video6.mp4" type="video/mp4"></video><div class="card-body"><h3>Work Video 6</h3><p>Upload video6.mp4 to GitHub.</p></div></div>
+        <div class="card"><div class="card-img"><img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp" alt="Snapshot 1"></div><div class="card-body"><h3>Field Snapshot 1</h3><p>Ready for rides, delivery & local guidance.</p></div></div>
+        <div class="card"><div class="card-img"><img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox" alt="Snapshot 2"></div><div class="card-body"><h3>Field Snapshot 2</h3><p>Dedicated service and local exploration.</p></div></div>
+        <div class="card"><div class="card-img"><img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy" alt="Snapshot 3"></div><div class="card-body"><h3>Field Snapshot 3</h3><p>On-ground service across the region.</p></div></div>
+        <div class="card"><div class="card-img"><img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi" alt="Snapshot 4"></div><div class="card-body"><h3>Field Snapshot 4</h3><p>Delivering quality service to our community.</p></div></div>
+
+        <!-- 6 Working Video Clips (No Broken Players!) -->
+        <div class="card">
+          <div class="card-img">
+            <video autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80">
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-man-riding-a-motorcycle-on-a-road-41763-large.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body"><h3>1. Bike Ride & Safe Drop</h3><p>Quick personal pickup & highway drops.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">
+            <video autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=600&q=80">
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-winding-road-in-the-mountains-41576-large.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body"><h3>2. Araku & Ghat Road Tours</h3><p>Scenic Eastern Ghats sightseeing trips.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">
+            <video autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=600&q=80">
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-delivery-person-carrying-a-package-42447-large.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body"><h3>3. Express Doorstep Delivery</h3><p>Hot food, water cans & parcel drops.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">
+            <video autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80">
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-mechanic-working-on-a-car-engine-43173-large.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body"><h3>4. Emergency Mechanic Support</h3><p>Roadside puncture & breakdown rescue.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">
+            <video autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80">
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-electrician-working-on-an-electrical-panel-43180-large.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body"><h3>5. Home Electrical & Plumbing</h3><p>Verified local technicians on call.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">
+            <video autoplay muted loop playsinline controls poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80">
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-beach-5016-large.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-body"><h3>6. Vizag Coastline & Weekend Trips</h3><p>Customized family & group packages.</p></div>
+        </div>
       </div>
     </section>
   </main>
@@ -399,7 +459,7 @@
   <footer>
     <h3>Community Super-App • Prakash</h3>
     <p>Phone: +91 89852 40287 • S.Kota, Tatipudi, Kasipatnam, Araku & Visakhapatnam</p>
-    <p style="margin:10px 0;"><a href="https://instagram.com/hipraka" target="_blank">Instagram (@hipraka)</a> | <a href="https://wa.me/918985240287">WhatsApp</a> | <a href="tel:+918985240287">Direct Call</a></p>
+    <p style="margin:10px 0;"><a href="https://instagram.com/hipraka" target="_blank">Instagram (@hipraka)</a> | <a href="https://wa.me/918985240287" target="_blank">WhatsApp</a> | <a href="tel:+918985240287">Direct Call</a></p>
     <p>&copy; 2026 All Rights Reserved.</p>
   </footer>
 
@@ -410,24 +470,38 @@
       <h2 id="modalTitle" style="color:var(--primary);font-size:21px;"></h2>
       <p id="modalSubtitle" style="font-size:13px;color:var(--muted);"></p>
       <div id="modalGrid" class="modal-grid"></div>
-      <a id="modalBookBtn" href="https://wa.me/918985240287" target="_blank" class="btn btn-wa">💬 Book / Order Now on WhatsApp</a>
+      <a id="modalBookBtn" href="https://wa.me/918985240287" target="_blank" class="btn btn-wa">💬 Book / Order Full Package on WhatsApp</a>
     </div>
   </div>
 
   <script>
-    const pics = ["https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp","https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox","https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy","https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi"];
+    const pics = [
+      "https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp",
+      "https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox",
+      "https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy",
+      "https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi"
+    ];
     let pIdx = 0;
-    setInterval(() => { pIdx = (pIdx + 1) % pics.length; document.getElementById("rotatingProfile").src = pics[pIdx]; }, 3500);
+    setInterval(() => {
+      pIdx = (pIdx + 1) % pics.length;
+      document.getElementById("rotatingProfile").src = pics[pIdx];
+    }, 3500);
 
     function calcFare() {
       const km = Math.max(1, parseInt(document.getElementById("kmInput").value) || 1);
-      document.getElementById("fareOut").innerText = km <= 3 ? 30 : 30 + (km - 3) * 10;
+      const isNight = document.getElementById("nightCheck").checked;
+      let total = km <= 3 ? 30 : 30 + (km - 3) * 10;
+      if (isNight) total += 20;
+      document.getElementById("fareOut").innerText = total;
+      const msg = `Hi Prakash, I need a Bike Ride for ${km} KM${isNight ? ' (Night/Emergency)' : ''}. Est. Fare: ₹${total}`;
+      document.getElementById("bookRideWa").href = "https://wa.me/918985240287?text=" + encodeURIComponent(msg);
     }
 
     function toggleDrawer(open) {
       document.getElementById("navDrawer").classList.toggle("open", open);
       document.getElementById("drawerOverlay").classList.toggle("open", open);
     }
+
     function switchView(secId, btn) {
       document.querySelectorAll(".drawer-item").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
@@ -443,6 +517,7 @@
       btn.classList.add("active");
       filterCards();
     }
+
     function filterCards() {
       const q = document.getElementById("globalSearch").value.toLowerCase();
       document.querySelectorAll(".filterable").forEach(card => {
@@ -455,11 +530,11 @@
     function shareLiveGPS() {
       const toast = document.getElementById("gps-toast");
       toast.innerText = "📡 Getting your exact GPS location...";
-      if (!navigator.geolocation) { toast.innerText = "GPS not supported."; return; }
+      if (!navigator.geolocation) { toast.innerText = "⚠️ GPS not supported on this browser."; return; }
       navigator.geolocation.getCurrentPosition(pos => {
         const mapUrl = `https://www.google.com/maps?q=${pos.coords.latitude},${pos.coords.longitude}`;
         toast.innerText = "✅ Location found! Opening WhatsApp...";
-        window.open(`https://wa.me/918985240287?text=*Pickup / Live GPS Location*%0AMy Location: ${encodeURIComponent(mapUrl)}`, "_blank");
+        window.open(`https://wa.me/918985240287?text=*Pickup%20/%20Live%20GPS%20Location*%0AMy%20Location:%20${encodeURIComponent(mapUrl)}`, "_blank");
       }, () => { toast.innerText = "⚠️ Please turn ON Phone Location (GPS) and try again."; });
     }
 
@@ -477,7 +552,7 @@
         { name: "2. Kailasagiri", price: "Included", img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" },
         { name: "3. Rushikonda Beach", price: "Included", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=400&q=80" },
         { name: "4. Simhachalam", price: "Included", img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=400&q=80" },
-        { name: "5. Thotlakonda", price: "Included", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=400&q=80" },
+        { name: "5. Thotlakonda", price: "Included", img: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=400&q=80" },
         { name: "6. Yarada Beach", price: "Included", img: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=400&q=80" }
       ]},
       kasipatnam: { title: "Kasipatnam & Tyda (6 Spots)", subtitle: "Package: ₹1,199", items: [
@@ -497,7 +572,7 @@
         { name: "6. Coffee Estates", price: "Included", img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=400&q=80" }
       ]},
       vizianagaram: { title: "Vizianagaram Heritage (6 Spots)", subtitle: "Package: ₹899", items: [
-        { name: "1. Vizianagaram Fort", price: "Included", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=400&q=80" },
+        { name: "1. Vizianagaram Fort", price: "Included", img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=400&q=80" },
         { name: "2. Ramanarayanam", price: "Included", img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=400&q=80" },
         { name: "3. Pydithalli Temple", price: "Included", img: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=400&q=80" },
         { name: "4. Bobbili Fort", price: "Included", img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=400&q=80" },
@@ -514,27 +589,27 @@
       ]},
       mechanic: { title: "Vehicle Mechanic (6 Works)", subtitle: "Visit: ₹100", items: [
         { name: "1. Puncture Repair", price: "From ₹80", img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&q=80" },
-        { name: "2. Oil Change", price: "From ₹150", img: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=400&q=80" },
+        { name: "2. Engine Oil Change", price: "From ₹150", img: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=400&q=80" },
         { name: "3. Battery Jumpstart", price: "From ₹120", img: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=400&q=80" },
-        { name: "4. Brake & Clutch", price: "From ₹100", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80" },
-        { name: "5. Full Service", price: "From ₹350", img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&q=80" },
-        { name: "6. Roadside Towing", price: "Call Rate", img: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=400&q=80" }
+        { name: "4. Brake & Clutch Fix", price: "From ₹100", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80" },
+        { name: "5. Full Bike Service", price: "From ₹350", img: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=400&q=80" },
+        { name: "6. Roadside Towing", price: "Call Rate", img: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=400&q=80" }
       ]},
       electrician: { title: "Electrician (6 Works)", subtitle: "Visit: ₹100", items: [
-        { name: "1. Fan Repair", price: "From ₹120", img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=400&q=80" },
+        { name: "1. Ceiling Fan Repair", price: "From ₹120", img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=400&q=80" },
         { name: "2. Switchboard Fix", price: "From ₹100", img: "https://images.unsplash.com/photo-1558402529-d2638a7023e9?auto=format&fit=crop&w=400&q=80" },
-        { name: "3. Inverter Setup", price: "From ₹250", img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=400&q=80" },
+        { name: "3. Inverter Setup", price: "From ₹250", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=400&q=80" },
         { name: "4. LED Light Fitting", price: "From ₹80", img: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=400&q=80" },
-        { name: "5. MCB & Fuse", price: "From ₹150", img: "https://images.unsplash.com/photo-1558402529-d2638a7023e9?auto=format&fit=crop&w=400&q=80" },
-        { name: "6. House Wiring", price: "Estimate", img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=400&q=80" }
+        { name: "5. MCB & Fuse Fix", price: "From ₹150", img: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=400&q=80" },
+        { name: "6. New House Wiring", price: "Estimate", img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=80" }
       ]},
       plumber: { title: "Plumber (6 Works)", subtitle: "Visit: ₹100", items: [
-        { name: "1. Tap Leakage", price: "From ₹100", img: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=400&q=80" },
-        { name: "2. Motor Repair", price: "From ₹250", img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=80" },
-        { name: "3. Tank Cleaning", price: "From ₹300", img: "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=400&q=80" },
-        { name: "4. Bathroom Fitting", price: "From ₹150", img: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=400&q=80" },
-        { name: "5. Sink Blockage", price: "From ₹150", img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=80" },
-        { name: "6. Full Pipeline", price: "Estimate", img: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=400&q=80" }
+        { name: "1. Tap Leakage Fix", price: "From ₹100", img: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=400&q=80" },
+        { name: "2. Water Motor Repair", price: "From ₹250", img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=80" },
+        { name: "3. Water Tank Cleaning", price: "From ₹300", img: "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=400&q=80" },
+        { name: "4. Bathroom Fitting", price: "From ₹150", img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" },
+        { name: "5. Sink Blockage Clear", price: "From ₹150", img: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=400&q=80" },
+        { name: "6. Full Pipe Line", price: "Estimate", img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=400&q=80" }
       ]},
       labour: { title: "Labour Supply (6 Types)", subtitle: "Daily / Shift Workers", items: [
         { name: "1. Loading Helpers", price: "₹600/Day", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=400&q=80" },
@@ -542,22 +617,22 @@
         { name: "3. Function Workers", price: "₹550/Shift", img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400&q=80" },
         { name: "4. Farm Labour", price: "₹500/Day", img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=400&q=80" },
         { name: "5. Plot Cleaning", price: "₹600/Day", img: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=400&q=80" },
-        { name: "6. Shifting Helpers", price: "₹500/Trip", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" }
+        { name: "6. Shifting Helpers", price: "₹500/Trip", img: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=400&q=80" }
       ]},
       tanker: { title: "Water Tankers (6 Sizes)", subtitle: "Fast Supply", items: [
         { name: "1. Mini Tanker 2000L", price: "₹500", img: "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=400&q=80" },
-        { name: "2. Medium 4000L", price: "₹850", img: "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=400&q=80" },
+        { name: "2. Medium 4000L", price: "₹850", img: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=400&q=80" },
         { name: "3. Tractor Tanker 5000L", price: "₹1,000", img: "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=400&q=80" },
-        { name: "4. Function Bulk", price: "Custom", img: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=400&q=80" },
+        { name: "4. Function Bulk", price: "Custom", img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400&q=80" },
         { name: "5. Construction Water", price: "₹800", img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=400&q=80" },
-        { name: "6. RO Drinking Tanker", price: "₹1,200", img: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=400&q=80" }
+        { name: "6. RO Drinking Tanker", price: "₹1,200", img: "https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=400&q=80" }
       ]},
       transport: { title: "Auto & Transport (6 Options)", subtitle: "Pickup & Drop", items: [
-        { name: "1. Passenger Auto", price: "From ₹100", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" },
-        { name: "2. Goods Auto", price: "From ₹250", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" },
-        { name: "3. Tata Ace Mini Truck", price: "From ₹500", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" },
+        { name: "1. Passenger Auto", price: "From ₹100", img: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=400&q=80" },
+        { name: "2. Goods Auto", price: "From ₹250", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80" },
+        { name: "3. Tata Ace Mini Truck", price: "From ₹500", img: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=400&q=80" },
         { name: "4. House Shifting", price: "From ₹1,200", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=400&q=80" },
-        { name: "5. Station Pickup", price: "From ₹150", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" },
+        { name: "5. Station Pickup", price: "From ₹150", img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=400&q=80" },
         { name: "6. Bike Parcel", price: "From ₹50", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80" }
       ]}
     };
@@ -567,8 +642,17 @@
       if (!d) return;
       document.getElementById("modalTitle").innerText = d.title;
       document.getElementById("modalSubtitle").innerText = d.subtitle;
-      document.getElementById("modalBookBtn").href = "https://wa.me/918985240287?text=" + encodeURIComponent("Hi, I want to book: " + d.title);
-      document.getElementById("modalGrid").innerHTML = d.items.map(i => `<div class="mini-card"><img src="${i.img}"><div><h4>${i.name}</h4><span>${i.price}</span></div></div>`).join("");
+      document.getElementById("modalBookBtn").href = "https://wa.me/918985240287?text=" + encodeURIComponent("Hi Prakash, I want to book: " + d.title);
+      document.getElementById("modalGrid").innerHTML = d.items.map(i => `
+        <div class="mini-card">
+          <img src="${i.img}" alt="${i.name}">
+          <div class="mini-card-info">
+            <h4>${i.name}</h4>
+            <span>${i.price}</span>
+          </div>
+          <a href="https://wa.me/918985240287?text=${encodeURIComponent('Hi Prakash, I need: ' + i.name + ' (' + i.price + ')')}" target="_blank" class="mini-book-btn">💬 Book This</a>
+        </div>
+      `).join("");
       document.getElementById("detailsModal").style.display = "flex";
     }
     function closeModal() { document.getElementById("detailsModal").style.display = "none"; }
