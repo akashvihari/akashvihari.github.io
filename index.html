@@ -54,7 +54,7 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            opacity: 0.92;
+            opacity: 0.94;
             transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
         }
 
@@ -188,8 +188,8 @@
 
         /* 7. Feedback Section with Your Transparent Photo Background */
         #feedback {
-            background: linear-gradient(rgba(240, 236, 225, 0.86), rgba(240, 236, 225, 0.90)),
-                        url('https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox') center/cover no-repeat;
+            background: linear-gradient(rgba(240, 236, 225, 0.85), rgba(240, 236, 225, 0.90)),
+                        url('https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp') center/cover no-repeat;
         }
         .feedback-box {
             max-width: 650px;
@@ -241,7 +241,11 @@
     <!-- 1. Header Section -->
     <header>
         <div class="profile-wrapper">
-            <img id="rotatingProfile" src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox" alt="Prakash Profile" class="profile-pic">
+            <img id="rotatingProfile" 
+                 src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp" 
+                 onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';"
+                 alt="Prakash Profile" 
+                 class="profile-pic">
         </div>
         <div class="header-text">
             <h1>Community Hub & Services</h1>
@@ -256,6 +260,179 @@
     <!-- 2. Navigation Tabs -->
     <nav>
         <a href="#tourism">Tourism</a>
+        <a href="#work">My Work Gallery</a>
+        <a href="#delivery">Quick Delivery</a>
+        <a href="#services">Local Services</a>
+        <a href="#feedback">Feedback</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- 3. Tourism Section -->
+        <section id="tourism">
+            <div class="section-header">
+                <h2>Eastern Ghats & Coastal Explorer</h2>
+                <p>Curated road trips, misty valleys, and cultural heritage tours.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=600&q=80" alt="Araku Valley">
+                    <div class="card-body">
+                        <span class="badge">Hill Station</span>
+                        <h3>Araku Valley & Borra Caves</h3>
+                        <p>Tribal coffee plantations, misty viewpoints, and ancient limestone caves.</p>
+                        <a href="https://wa.me/918985240287?text=Hi, I want to book Araku Tour" class="btn">Book Trip</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Visakhapatnam">
+                    <div class="card-body">
+                        <span class="badge">Coastal</span>
+                        <h3>Visakhapatnam Coastline</h3>
+                        <p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p>
+                        <a href="https://wa.me/918985240287?text=Hi, I want to book Vizag Tour" class="btn">Book Trip</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80" alt="Kasipatnam">
+                    <div class="card-body">
+                        <span class="badge">Waterfalls</span>
+                        <h3>Kasipatnam & Tyda</h3>
+                        <p>Jungle camp trails, refreshing stream crossings, and hidden waterfalls.</p>
+                        <a href="https://wa.me/918985240287?text=Hi, I want to book Kasipatnam Tour" class="btn">Book Trip</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80" alt="Paderu">
+                    <div class="card-body">
+                        <span class="badge">Highlands</span>
+                        <h3>Paderu Coffee Highlands</h3>
+                        <p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p>
+                        <a href="https://wa.me/918985240287?text=Hi, I want to book Paderu Tour" class="btn">Book Trip</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80" alt="Vizianagaram">
+                    <div class="card-body">
+                        <span class="badge">Heritage</span>
+                        <h3>Vizianagaram Royal Fort</h3>
+                        <p>Historic Gajapathi stone architecture and Ramanarayanam cultural temple.</p>
+                        <a href="https://wa.me/918985240287?text=Hi, I want to book Vizianagaram Tour" class="btn">Book Trip</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. My Work Gallery -->
+        <section id="work">
+            <div class="section-header">
+                <h2>My Work & Field Gallery</h2>
+                <p>Live highlights, field snapshots, and project videos.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kl6k0mfg3zoorpxarfwp" alt="Profile Highlight">
+                    <div class="card-body">
+                        <span class="badge">Featured</span>
+                        <h3>Field Snapshot 1</h3>
+                        <p>Dedicated service and local exploration.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy" alt="Featured Photo 2">
+                    <div class="card-body">
+                        <span class="badge">Highlight</span>
+                        <h3>Field Snapshot 2</h3>
+                        <p>On-ground service across the region.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi" alt="Featured Photo 3">
+                    <div class="card-body">
+                        <span class="badge">Highlight</span>
+                        <h3>Field Snapshot 3</h3>
+                        <p>Delivering quality service to our community.</p>
+                    </div>
+                </div>
+
+                <!-- 6 Video Placeholders -->
+                <div class="card">
+                    <video controls><source src="video1.mp4" type="video/mp4"></video>
+                    <div class="card-body"><h3>Work Video 1</h3><p>Upload video1.mp4 to GitHub to play.</p></div>
+                </div>
+                <div class="card">
+                    <video controls><source src="video2.mp4" type="video/mp4"></video>
+                    <div class="card-body"><h3>Work Video 2</h3><p>Upload video2.mp4 to GitHub to play.</p></div>
+                </div>
+                <div class="card">
+                    <video controls><source src="video3.mp4" type="video/mp4"></video>
+                    <div class="card-body"><h3>Work Video 3</h3><p>Upload video3.mp4 to GitHub to play.</p></div>
+                </div>
+                <div class="card">
+                    <video controls><source src="video4.mp4" type="video/mp4"></video>
+                    <div class="card-body"><h3>Work Video 4</h3><p>Upload video4.mp4 to GitHub to play.</p></div>
+                </div>
+                <div class="card">
+                    <video controls><source src="video5.mp4" type="video/mp4"></video>
+                    <div class="card-body"><h3>Work Video 5</h3><p>Upload video5.mp4 to GitHub to play.</p></div>
+                </div>
+                <div class="card">
+                    <video controls><source src="video6.mp4" type="video/mp4"></video>
+                    <div class="card-body"><h3>Work Video 6</h3><p>Upload video6.mp4 to GitHub to play.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Quick Delivery Section -->
+        <section id="delivery">
+            <div class="section-header">
+                <h2>Quick Local Delivery</h2>
+                <p>Fast doorstep delivery for beverages, snacks, and essentials.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Cool Drinks">
+                    <div class="card-body">
+                        <h3>Cool Drinks & Soft Drinks</h3>
+                        <p>Chilled sodas, juices, and energy drinks delivered fast.</p>
+                        <a href="https://wa.me/918985240287?text=Hi, I want to order Cool Drinks" class="btn btn-whatsapp">Order on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=600&q=80" alt="Snacks">
+                    <div class="card-body">
+                        <h3>Snacks & Refreshments</h3>
+                        <p>Fresh bakery items, chips, and evening snacks.</p>
+                        <a href="https://wa.me/918985240287?text=Hi, I want to order Snacks" class="btn btn-whatsapp">Order on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=80" alt="Water Delivery">
+                    <div class="card-body">
+                        <h3>Drinking Water Cans</h3>
+                        <p>20L purified mineral water cans for homes & events.</p>
+                        <a href="https://wa.me/918985240287?text=Hi, I need Water Cans" class="btn btn-whatsapp">Order on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Local Services Directory -->
+        <section id="services">
+            <div class="section-header">
+                <h2>Local Services Directory</h2>
+                <p>Trusted technicians and emergency help just one call away.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Vehicle Mechanic">
+                    <div class="card-body">
+                        <h3>Vehicle Mechanic</h3>
+                        <p>Bike & car breakdown assistance, puncture, and engine repair.</p>
+                        <a href="tel:+918985240287" class="btn btn-call">Call Mechanic</a>
+                    </div>
+                </div>
+                <div class=sm</a>
         <a href="#work">My Work Gallery</a>
         <a href="#delivery">Quick Delivery</a>
         <a href="#services">Local Services</a>
