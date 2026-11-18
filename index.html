@@ -1,57 +1,215 @@
-<!DOCTYPE html>
-<html lang="te">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akash Tourism & Travels</title>
-    <style>
-        /* IDHI CSS CODE (Design & Colors kosam) */
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f8ff; color: #333; }
-        header { background-color: #0066cc; color: white; text-align: center; padding: 35px 15px; }
-        header h1 { margin: 0; font-size: 28px; }
-        header p { margin: 8px 0 0; font-size: 16px; }
-        .container { max-width: 900px; margin: 20px auto; padding: 0 15px; }
-        .card { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-        h2 { color: #0066cc; border-bottom: 2px solid #e0f0ff; padding-bottom: 8px; }
-        ul { list-style-type: none; padding: 0; }
-        li { padding: 10px 0; border-bottom: 1px dashed #ccc; font-size: 16px; }
-        .btn { display: inline-block; background-color: #25D366; color: white; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 6px; margin-top: 10px; }
-        footer { text-align: center; padding: 15px; background: #222; color: white; font-size: 14px; }
-    </style>
-</head>
-<body>
+---
+name: "Eastern Ghats & Coastal Andhra Explorer"
+description: "An evocative, editorial travel and cultural tourism design system celebrating Visakhapatnam coastal elegance, Araku misty valleys, Kasipatnam waterfalls, Paderu tribal coffee highlands, and Vizianagaram royal heritage."
+---
 
-    <!-- IDHI HTML CODE (Website lo kanipinche matter) -->
-    <header>
-        <h1>Akash Tourism & Travels</h1>
-        <p>Best Tour Packages | Car Rentals | Temple & Hill Station Trips</p>
-    </header>
+## Overview
 
-    <div class="container">
+The Eastern Ghats & Coastal Andhra Explorer design system evokes the misty serenity of Araku's coffee plantations, the deep azure waves of Visakhapatnam's Bay of Bengal coastline, the rustic earthen red hues of tribal handicraft traditions, and the majestic stone architecture of Vizianagaram's Fort. The interface combines an editorial magazine layout with high-utility travel logistics, immersive destination previews, elevation waypoints, and itinerary planning tools.
 
-        <div class="card">
-            <h2>Maa Tour Packages</h2>
-            <ul>
-                <li>🏞️ Araku Valley & Borra Caves 1-Day Trip</li>
-                <li>🏖️ Vizag Local Sightseeing (RK Beach, Kailasagiri)</li>
-                <li>🛕 Simhachalam & Annavaram Temple Tour</li>
-                <li>🚗 Outstation Car & Tempo Traveller Booking</li>
-            </ul>
-        </div>
+Designed for modern explorers, weekend road-trippers from Vizag, and cultural travelers seeking authentic Andhra Pradesh hill station and coastal heritage experiences.
 
-        <div class="card">
-            <h2>Booking & Contact</h2>
-            <p><strong>Phone / WhatsApp:</strong> +91 98765 43210</p>
-            <p><strong>Location:</strong> Visakhapatnam, Andhra Pradesh</p>
-            <a href="https://wa.me/919876543210" class="btn" target="_blank">WhatsApp Lo Book Cheyandi</a>
-        </div>
+## Colors
 
-    </div>
+The color palette reflects the geographical transition from coastal sea waters to dense Ghat cloud forests and red laterite soil. 
 
-    <footer>
-        <p>&copy; 2026 Akash Tourism. All Rights Reserved.</p>
-    </footer>
+- **Primary (Deep Pine Teal):** Evokes the dense forest canopy of the Eastern Ghats.
+- **Secondary (Coast Bronze / Terracotta):** Represents the rich earth, tribal terracotta craft, and warm coastal sunshine.
+- **Accent (Sunlit Amber):** Used for highlighting badges, ratings, and call-to-actions.
+- **Neutral & Surface:** Clean warm ivory tones and crisp contrast for outdoor readability.
 
-</body>
-</html>
+```yaml
+colors:
+  accent: "#B45309"
+  success: "#15803D"
+  warning: "#D97706"
+  error: "#DC2626"
+  sand: "#F5F2EB"
+  light:
+    primary: "#14532D"
+    on-primary: "#FFFFFF"
+    secondary: "#9A3412"
+    on-secondary: "#FFFFFF"
+    surface: "#FAF8F5"
+    on-surface: "#1C1917"
+    surface-container: "#F0ECE1"
+    surface-container-low: "#F7F5EE"
+    surface-container-high: "#E6E1D3"
+    outline: "#57534E"
+    outline-variant: "#A8A29E"
+  dark:
+    primary: "#86EFAC"
+    on-primary: "#052E16"
+    secondary: "#FDBA74"
+    on-secondary: "#431407"
+    surface: "#1C1917"
+    on-surface: "#F5F5F4"
+    surface-container: "#292524"
+    surface-container-low: "#201D1B"
+    surface-container-high: "#44403C"
+    outline: "#A8A29E"
+    outline-variant: "#78716C"
+```
 
+## Typography
+
+This system features a dual-pairing: **Playfair Display** (editorial serif with timeless warmth for headings, destination titles, and narrative accents) and **Poppins** (clean, geometric humanist sans-serif with exceptional readability for navigation, logistical itineraries, and data points).
+
+```yaml
+typography:
+  display-lg:
+    fontFamily: "Playfair Display"
+    fontSize: 48px
+    fontWeight: 700
+    lineHeight: 56px
+    letterSpacing: -0.5px
+  display-lg-mobile:
+    fontFamily: "Playfair Display"
+    fontSize: 32px
+    fontWeight: 700
+    lineHeight: 40px
+    letterSpacing: -0.25px
+  display-md:
+    fontFamily: "Playfair Display"
+    fontSize: 36px
+    fontWeight: 700
+    lineHeight: 44px
+    letterSpacing: -0.25px
+  display-md-mobile:
+    fontFamily: "Playfair Display"
+    fontSize: 28px
+    fontWeight: 700
+    lineHeight: 36px
+    letterSpacing: 0px
+  headline-lg:
+    fontFamily: "Playfair Display"
+    fontSize: 30px
+    fontWeight: 600
+    lineHeight: 38px
+    letterSpacing: 0px
+  headline-md:
+    fontFamily: "Playfair Display"
+    fontSize: 24px
+    fontWeight: 600
+    lineHeight: 32px
+    letterSpacing: 0px
+  headline-sm:
+    fontFamily: "Playfair Display"
+    fontSize: 20px
+    fontWeight: 600
+    lineHeight: 28px
+    letterSpacing: 0px
+  title-lg:
+    fontFamily: "Poppins"
+    fontSize: 18px
+    fontWeight: 600
+    lineHeight: 26px
+    letterSpacing: 0px
+  title-md:
+    fontFamily: "Poppins"
+    fontSize: 16px
+    fontWeight: 600
+    lineHeight: 24px
+    letterSpacing: 0px
+  body-lg:
+    fontFamily: "Poppins"
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: 26px
+    letterSpacing: 0px
+  body-md:
+    fontFamily: "Poppins"
+    fontSize: 14px
+    fontWeight: 400
+    lineHeight: 22px
+    letterSpacing: 0px
+  body-sm:
+    fontFamily: "Poppins"
+    fontSize: 12px
+    fontWeight: 400
+    lineHeight: 18px
+    letterSpacing: 0px
+  label-lg:
+    fontFamily: "Poppins"
+    fontSize: 14px
+    fontWeight: 500
+    lineHeight: 20px
+    letterSpacing: 0.1px
+  label-md:
+    fontFamily: "Poppins"
+    fontSize: 12px
+    fontWeight: 500
+    lineHeight: 16px
+    letterSpacing: 0.5px
+  label-sm:
+    fontFamily: "Poppins"
+    fontSize: 10px
+    fontWeight: 600
+    lineHeight: 14px
+    letterSpacing: 0.5px
+```
+
+## Layout & Spacing
+
+A 12-column responsive fluid grid structured for desktop with standard max-width of 1280px, responsive padding, and an 8px base spacing increment.
+
+```yaml
+spacing:
+  gutter-xs: 4px
+  gutter-sm: 8px
+  gutter-md: 16px
+  gutter-lg: 24px
+  gutter-xl: 32px
+  section: 48px
+  page-margin: 24px
+```
+
+## Elevation & Depth
+
+Visual hierarchy uses subtle surface-container tiers and ambient warm-tinted shadows, preserving natural outdoor clarity without harsh artificial drop-shadows.
+
+## Shapes
+
+Organic and refined curves reflecting natural topography and architectural archways.
+
+```yaml
+rounded:
+  sm: 4px
+  DEFAULT: 8px
+  md: 12px
+  lg: 16px
+  xl: 24px
+  full: 9999px
+```
+
+## Motion & Micro-interaction
+
+Understated, subtle hover elevations and smooth tab switches respecting calm nature exploration.
+
+```yaml
+motion:
+  state-change:
+    duration: 150ms
+    delay: 0ms
+    timingFunction: ease-out
+  surface-enter:
+    duration: 250ms
+    delay: 0ms
+    timingFunction: cubic-bezier(0.2, 0, 0, 1)
+  surface-exit:
+    duration: 150ms
+    delay: 0ms
+    timingFunction: cubic-bezier(0.3, 0, 1, 1)
+```
+
+## Voice & Content Strategy
+
+The voice is welcoming, culturally informed, and exploratory. Destination names are proudly featured alongside authentic local context: Araku Valley tribal coffee & Borra Caves, Visakhapatnam's RK Beach and Kailasagiri, Kasipatnam's Tyda jungle camp and stream crossings, Paderu's cloud-kissed viewpoints and organic turmeric farms, and Vizianagaram's historic Gajapathi fort and Ramanarayanam temple.
+
+## Components
+
+- `components/button.html`
+- `components/card.html`
+- `components/chip.html`
+- `components/tabs.html`
+- `components/badge.html`
