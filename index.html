@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prakash Community Hub | Tourism, Delivery & Local Services</title>
+    <title>Community Hub & Services | Eastern Ghats Explorer</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -22,29 +22,29 @@
         body { font-family: 'Poppins', sans-serif; background-color: var(--surface); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-        /* 1. Header with Moving Profile Photos & Transparent Watermark */
+        /* 1. Header Section */
         header {
-            background: linear-gradient(135deg, rgba(10, 46, 24, 0.92), rgba(20, 83, 45, 0.88)),
-                        url('https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy') center/cover no-repeat;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #1E6B3B 100%);
             color: var(--white);
-            padding: 40px 24px;
+            padding: 36px 24px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             text-align: center;
             box-shadow: 0 10px 30px rgba(20, 83, 45, 0.25);
+            overflow: hidden;
         }
 
         .profile-wrapper {
             position: absolute;
             left: 32px;
-            width: 100px;
-            height: 100px;
+            width: 95px;
+            height: 95px;
             border-radius: 50%;
             padding: 4px;
-            background: linear-gradient(45deg, var(--accent), rgba(255,255,255,0.4));
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, var(--accent), rgba(255,255,255,0.3));
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
             animation: floatProfile 4s ease-in-out infinite;
             z-index: 10;
         }
@@ -54,32 +54,22 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            opacity: 0.95;
-            transition: opacity 0.6s ease-in-out, transform 0.6s ease;
+            opacity: 0.92;
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
         }
+
+        .profile-wrapper:hover .profile-pic { opacity: 1; transform: scale(1.06); }
 
         @keyframes floatProfile {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-7px) rotate(2deg); }
         }
 
-        .live-badge {
-            display: inline-block;
-            background: rgba(21, 128, 61, 0.35);
-            border: 1px solid #86EFAC;
-            color: #86EFAC;
-            font-size: 12px;
-            padding: 4px 14px;
-            border-radius: 9999px;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
+        .header-text { max-width: 700px; z-index: 5; }
+        .header-text h1 { font-size: 36px; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header-text p { font-size: 15px; opacity: 0.9; margin-top: 6px; }
 
-        .header-text { max-width: 720px; z-index: 5; }
-        .header-text h1 { font-size: 36px; letter-spacing: -0.5px; }
-        .header-text p { font-size: 15px; opacity: 0.92; margin-top: 6px; }
-
-        .header-socials { margin-top: 16px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .header-socials { margin-top: 14px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
         .social-pill {
             display: inline-flex;
             align-items: center;
@@ -88,17 +78,16 @@
             backdrop-filter: blur(6px);
             color: var(--white);
             text-decoration: none;
-            padding: 7px 16px;
+            padding: 7px 18px;
             border-radius: 9999px;
             font-size: 13px;
             font-weight: 500;
             border: 1px solid rgba(255,255,255,0.3);
-            cursor: pointer;
             transition: all 0.25s ease;
         }
         .social-pill:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
 
-        /* 2. Navigation Bar */
+        /* 2. Navigation Tabs */
         nav {
             background-color: var(--secondary);
             position: sticky;
@@ -112,52 +101,34 @@
         nav a {
             color: var(--white);
             text-decoration: none;
-            padding: 13px 16px;
+            padding: 14px 18px;
             font-size: 14px;
             font-weight: 500;
             transition: background 0.2s ease;
         }
         nav a:hover { background-color: var(--accent); }
 
-        /* Container & Sections */
-        .container { max-width: 1280px; margin: 0 auto; padding: 24px 18px; }
+        /* Main Container & Sections */
+        .container { max-width: 1280px; margin: 0 auto; padding: 28px 20px; }
         section {
             background-color: var(--container);
             border-radius: 18px;
-            padding: 32px 24px;
-            margin-bottom: 38px;
+            padding: 36px 28px;
+            margin-bottom: 44px;
             box-shadow: 0 8px 24px rgba(28, 25, 23, 0.06);
             border: 1px solid rgba(230, 225, 211, 0.8);
             position: relative;
             overflow: hidden;
         }
-        .section-header { margin-bottom: 24px; border-bottom: 2px solid #E6E1D3; padding-bottom: 12px; position: relative; z-index: 2; }
-        .section-header h2 { font-size: 28px; color: var(--primary); }
+        .section-header { margin-bottom: 28px; border-bottom: 2px solid #E6E1D3; padding-bottom: 14px; position: relative; z-index: 2; }
+        .section-header h2 { font-size: 30px; color: var(--primary); }
         .section-header p { color: var(--text-muted); font-size: 14px; margin-top: 4px; }
-
-        /* Quick Intro Strip (Easy for visitors to understand immediately) */
-        .intro-strip {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-        .intro-item {
-            background: var(--white);
-            padding: 16px;
-            border-radius: 12px;
-            text-align: center;
-            border-bottom: 3px solid var(--primary);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-        }
-        .intro-item h4 { color: var(--primary); font-size: 16px; margin-bottom: 4px; }
-        .intro-item p { font-size: 13px; color: var(--text-muted); }
 
         /* Grid & Cards */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 22px;
+            gap: 24px;
             position: relative;
             z-index: 2;
         }
@@ -171,20 +142,120 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(20, 83, 45, 0.14); }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(20, 83, 45, 0.14); }
         .card img, .card video {
             width: 100%;
-            height: 195px;
+            height: 200px;
             object-fit: cover;
-            background-color: #1C1917;
+            background-color: #E6E1D3;
         }
         .card-body { padding: 18px; }
         .badge {
             display: inline-block;
             background-color: var(--accent);
             color: var(--white);
-            font-size
-sm</a>
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 9999px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .card-body h3 { font-size: 21px; color: var(--text-dark); margin-bottom: 8px; }
+        .card-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 18px; }
+
+        /* Buttons */
+        .btn {
+            display: block;
+            text-align: center;
+            background-color: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            padding: 11px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s ease;
+        }
+        .btn:hover { background-color: var(--primary-dark); }
+        .btn-whatsapp { background-color: #15803D; }
+        .btn-whatsapp:hover { background-color: #116630; }
+        .btn-call { background-color: var(--secondary); }
+        .btn-call:hover { background-color: #7C2D12; }
+
+        /* 7. Feedback Section with Your Transparent Photo Background */
+        #feedback {
+            background: linear-gradient(rgba(240, 236, 225, 0.86), rgba(240, 236, 225, 0.90)),
+                        url('https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox') center/cover no-repeat;
+        }
+        .feedback-box {
+            max-width: 650px;
+            margin: 0 auto;
+            background: rgba(250, 248, 245, 0.92);
+            backdrop-filter: blur(4px);
+            padding: 28px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 2;
+        }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--primary); }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #D6D3D1;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            background: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            text-align: center;
+            padding: 36px 20px;
+            font-size: 14px;
+        }
+        footer h3 { font-size: 24px; margin-bottom: 8px; }
+        footer p { opacity: 0.9; margin-top: 6px; }
+        .footer-links { margin: 16px 0; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+        .footer-links a { color: #FDBA74; text-decoration: none; font-weight: 600; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 28px 16px; }
+            .profile-wrapper { position: static; margin-bottom: 14px; width: 88px; height: 88px; }
+            .header-text h1 { font-size: 26px; }
+            nav a { padding: 12px 12px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header Section -->
+    <header>
+        <div class="profile-wrapper">
+            <img id="rotatingProfile" src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox" alt="Prakash Profile" class="profile-pic">
+        </div>
+        <div class="header-text">
+            <h1>Community Hub & Services</h1>
+            <p>Eastern Ghats Tourism • Quick Delivery • Local Experts</p>
+            <div class="header-socials">
+                <a href="https://instagram.com/hipraka" target="_blank" class="social-pill">📸 @hipraka</a>
+                <a href="https://wa.me/918985240287" target="_blank" class="social-pill">💬 WhatsApp: 8985240287</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Navigation Tabs -->
+    <nav>
+        <a href="#tourism">Tourism</a>
         <a href="#work">My Work Gallery</a>
         <a href="#delivery">Quick Delivery</a>
         <a href="#services">Local Services</a>
@@ -359,752 +430,4 @@ sm</a>
                 </div>
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Electrician">
-                  per" title="Click or hover to view clearly">
-            <img id="rotatingProfile" src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox" alt="Profile Photo" class="profile-pic">
-        </div>
-        <div class="header-text">
-            <h1>Community Hub & Services</h1>
-            <p>Eastern Ghats Tourism • Quick Delivery • Local Experts</p>
-            <div class="header-socials">
-                <!-- Replace YOUR_INSTAGRAM_ID with your actual Instagram username -->
-                <a href="https://instagram.com/YOUR_INSTAGRAM_ID" target="_blank" class="social-pill">📸 Follow on Instagram</a>
-                <!-- Replace 919876543210 with your actual phone number -->
-                <a href="https://wa.me/919876543210" target="_blank" class="social-pill">💬 WhatsApp Direct</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- 2. Navigation Tabs -->
-    <nav>
-        <a href="#tourism">Tourism</a>
-        <a href="#work">My Work Gallery</a>
-        <a href="#delivery">Quick Delivery</a>
-        <a href="#services">Local Services</a>
-        <a href="#feedback">Feedback</a>
-    </nav>
-
-    <div class="container">
-
-        <!-- 3. Tourism Section -->
-        <section id="tourism">
-            <div class="section-header">
-                <h2>Eastern Ghats & Coastal Explorer</h2>
-                <p>Curated road trips, misty valleys, and cultural heritage tours.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="araku.jpg" alt="Araku Valley">
-                    <div class="card-body">
-                        <span class="badge">Hill Station</span>
-                        <h3>Araku Valley & Borra Caves</h3>
-                        <p>Tribal coffee plantations, misty viewpoints, and ancient limestone caves.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to book Araku Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="vizag.jpg" alt="Visakhapatnam">
-                    <div class="card-body">
-                        <span class="badge">Coastal</span>
-                        <h3>Visakhapatnam Coastline</h3>
-                        <p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to book Vizag Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="kasipatnam.jpg" alt="Kasipatnam">
-                    <div class="card-body">
-                        <span class="badge">Waterfalls</span>
-                        <h3>Kasipatnam & Tyda</h3>
-                        <p>Jungle camp trails, refreshing stream crossings, and hidden waterfalls.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to book Kasipatnam Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="paderu.jpg" alt="Paderu">
-                    <div class="card-body">
-                        <span class="badge">Highlands</span>
-                        <h3>Paderu Coffee Highlands</h3>
-                        <p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to book Paderu Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="vizianagaram.jpg" alt="Vizianagaram">
-                    <div class="card-body">
-                        <span class="badge">Heritage</span>
-                        <h3>Vizianagaram Royal Fort</h3>
-                        <p>Historic Gajapathi stone architecture and Ramanarayanam cultural temple.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to book Vizianagaram Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. My Work Gallery (Your Cloudinary Photos + 6 Videos) -->
-        <section id="work">
-            <div class="section-header">
-                <h2>My Work & Field Gallery</h2>
-                <p>Live highlights, field snapshots, and project videos.</p>
-            </div>
-            <div class="grid">
-                <!-- Your Uploaded Cloudinary Photos -->
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy" alt="Featured Photo 1">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 1</h3>
-                        <p>On-ground service and local exploration.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi" alt="Featured Photo 2">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 2</h3>
-                        <p>Delivering quality service across the region.</p>
-                    </div>
-                </div>
-
-                <!-- 6 Video Placeholders -->
-                <div class="card">
-                    <video controls poster="video1-thumb.jpg"><source src="video1.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 1</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video2-thumb.jpg"><source src="video2.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 2</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video3-thumb.jpg"><source src="video3.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 3</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video4-thumb.jpg"><source src="video4.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 4</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video5-thumb.jpg"><source src="video5.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 5</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video6-thumb.jpg"><source src="video6.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 6</h3><p>Recent service highlight clip.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Quick Delivery Section -->
-        <section id="delivery">
-            <div class="section-header">
-                <h2>Quick Local Delivery</h2>
-                <p>Fast doorstep delivery for beverages, snacks, and essentials.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="drinks.jpg" alt="Cool Drinks">
-                    <div class="card-body">
-                        <h3>Cool Drinks & Soft Drinks</h3>
-                        <p>Chilled sodas, juices, and energy drinks delivered fast.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to order Cool Drinks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="snacks.jpg" alt="Snacks">
-                    <div class="card-body">
-                        <h3>Snacks & Refreshments</h3>
-                        <p>Fresh bakery items, chips, and evening snacks.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to order Snacks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="water-cans.jpg" alt="Water Delivery">
-                    <div class="card-body">
-                        <h3>Drinking Water Cans</h3>
-                        <p>20L purified mineral water cans for homes & events.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I need Water Cans" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Local Services Directory -->
-        <section id="services">
-            <div class="section-header">
-                <h2>Local Services Directory</h2>
-                <p>Trusted technicians and emergency help just one call away.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="mechanic.jpg" alt="Vehicle Mechanic">
-                    <div class="card-body">
-                        <h3>Vehicle Mechanic</h3>
-                        <p>Bike & car breakdown assistance, puncture, and engine repair.</p>
-                        <a href="tel:+919876543210" class="btn btn-call">Call Mechanic</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="electrician.jpg" alt="Electrician">
-                    <div class="card-body">
-                        <h3>Electrician</h3>
-        per" title="Click or hover to view clearly">
-            <img id="rotatingProfile" src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox" alt="Profile Photo" class="profile-pic">
-        </div>
-        <div class="header-text">
-            <h1>Community Hub & Services</h1>
-            <p>Eastern Ghats Tourism • Quick Delivery • Local Experts</p>
-            <div class="header-socials">
-                <!-- Replace YOUR_INSTAGRAM_ID with your actual Instagram username -->
-                <a href="https://instagram.com/YOUR_INSTAGRAM_ID" target="_blank" class="social-pill">📸 Follow on Instagram</a>
-                <!-- Replace 919876543210 with your actual phone number -->
-                <a href="https://wa.me/919876543210" target="_blank" class="social-pill">💬 WhatsApp Direct</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- 2. Navigation Tabs -->
-    <nav>
-        <a href="#tourism">Tourism</a>
-        <a href="#work">My Work Gallery</a>
-        <a href="#delivery">Quick Delivery</a>
-        <a href="#services">Local Services</a>
-        <a href="#feedback">Feedback</a>
-    </nav>
-
-    <div class="container">
-
-        <!-- 3. Tourism Section -->
-        <section id="tourism">
-            <div class="section-header">
-                <h2>Eastern Ghats & Coastal Explorer</h2>
-                <p>Curated road trips, misty valleys, and cultural heritage tours.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="araku.jpg" alt="Araku Valley">
-                    <div class="card-body">
-                        <span class="badge">Hill Station</span>
-                        <h3>Araku Valley & Borra Caves</h3>
-                        <p>Tribal coffee plantations, misty viewpoints, and ancient limestone caves.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to book Araku Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="vizag.jpg" alt="Visakhapatnam">
-                    <div class="card-body">
-                        <span class="badge">Coastal</span>
-                        <h3>Visakhapatnam Coastline</h3>
-                        <p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to book Vizag Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="kasipatnam.jpg" alt="Kasipatnam">
-                    <div class="card-body">
-                        <span class="badge">Waterfalls</span>
-                        <h3>Kasipatnam & Tyda</h3>
-                        <p>Jungle camp trails, refreshing stream crossings, and hidden waterfalls.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to book Kasipatnam Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="paderu.jpg" alt="Paderu">
-                    <div class="card-body">
-                        <span class="badge">Highlands</span>
-                        <h3>Paderu Coffee Highlands</h3>
-                        <p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to book Paderu Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="vizianagaram.jpg" alt="Vizianagaram">
-                    <div class="card-body">
-                        <span class="badge">Heritage</span>
-                        <h3>Vizianagaram Royal Fort</h3>
-                        <p>Historic Gajapathi stone architecture and Ramanarayanam cultural temple.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to book Vizianagaram Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. My Work Gallery (Your Cloudinary Photos + 6 Videos) -->
-        <section id="work">
-            <div class="section-header">
-                <h2>My Work & Field Gallery</h2>
-                <p>Live highlights, field snapshots, and project videos.</p>
-            </div>
-            <div class="grid">
-                <!-- Your Uploaded Cloudinary Photos -->
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy" alt="Featured Photo 1">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 1</h3>
-                        <p>On-ground service and local exploration.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi" alt="Featured Photo 2">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 2</h3>
-                        <p>Delivering quality service across the region.</p>
-                    </div>
-                </div>
-
-                <!-- 6 Video Placeholders -->
-                <div class="card">
-                    <video controls poster="video1-thumb.jpg"><source src="video1.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 1</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video2-thumb.jpg"><source src="video2.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 2</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video3-thumb.jpg"><source src="video3.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 3</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video4-thumb.jpg"><source src="video4.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 4</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video5-thumb.jpg"><source src="video5.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 5</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video6-thumb.jpg"><source src="video6.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 6</h3><p>Recent service highlight clip.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Quick Delivery Section -->
-        <section id="delivery">
-            <div class="section-header">
-                <h2>Quick Local Delivery</h2>
-                <p>Fast doorstep delivery for beverages, snacks, and essentials.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="drinks.jpg" alt="Cool Drinks">
-                    <div class="card-body">
-                        <h3>Cool Drinks & Soft Drinks</h3>
-                        <p>Chilled sodas, juices, and energy drinks delivered fast.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to order Cool Drinks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="snacks.jpg" alt="Snacks">
-                    <div class="card-body">
-                        <h3>Snacks & Refreshments</h3>
-                        <p>Fresh bakery items, chips, and evening snacks.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I want to order Snacks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="water-cans.jpg" alt="Water Delivery">
-                    <div class="card-body">
-                        <h3>Drinking Water Cans</h3>
-                        <p>20L purified mineral water cans for homes & events.</p>
-                        <a href="https://wa.me/919876543210?text=Hi, I need Water Cans" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Local Services Directory -->
-        <section id="services">
-            <div class="section-header">
-                <h2>Local Services Directory</h2>
-                <p>Trusted technicians and emergency help just one call away.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="mechanic.jpg" alt="Vehicle Mechanic">
-                    <div class="card-body">
-                        <h3>Vehicle Mechanic</h3>
-                        <p>Bike & car breakdown assistance, puncture, and engine repair.</p>
-                        <a href="tel:+919876543210" class="btn btn-call">Call Mechanic</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="electrician.jpg" alt="Electrician">
-                    <div class="card-body">
-                        <h3>Electrician</h3>
-        per" title="Click or hover to view clearly">
-            <img id="rotatingProfile" src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox" alt="Profile Photo" class="profile-pic">
-        </div>
-        <div class="header-text">
-            <h1>Community Hub & Services</h1>
-            <p>Eastern Ghats Tourism • Quick Delivery • Local Experts</p>
-            <div class="header-socials">
-                <!-- Replace YOUR_INSTAGRAM_ID with your actual Instagram username -->
-                <a href="https://instagram.com/YOUR_INSTAGRAM_ID" target="_blank" class="social-pill">📸 Follow on Instagram</a>
-                <!-- Replace 919876543210 with your actual phone number -->
-                <a href="https://wa.me/919876543210" target="_blank" class="social-pill">💬 WhatsApp Direct</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- 2. Navigation Tabs -->
-    <nav>
-        <a href="#tourism">Tourism</a>
-        <a href="#work">My Work Gallery</a>
-        <a href="#delivery">Quick Delivery</a>
-        <a href="#services">Local Services</a>
-        <a href="#feedback">Feedback</a>
-    </nav>
-
-    <div class="container">
-
-        <!-- 3. Tourism Section -->
-        <section id="tourism">
-            <div class="section-header">
-                <h2>Eastern Ghats & Coastal Explorer</h2>
-                <p>Curated road trips, misty valleys, and cultural heritage tours.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="araku.jpg" alt="Araku Valley">
-                    <div class="card-body">
-                        <span class="badge">Hill Station</span>
-                        <h3>Araku Valley & Borra Caves</h3>
-                        <p>Tribal coffee plantations, misty viewpoints, and ancient limestone caves.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to book Araku Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="vizag.jpg" alt="Visakhapatnam">
-                    <div class="card-body">
-                        <span class="badge">Coastal</span>
-                        <h3>Visakhapatnam Coastline</h3>
-                        <p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to book Vizag Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="kasipatnam.jpg" alt="Kasipatnam">
-                    <div class="card-body">
-                        <span class="badge">Waterfalls</span>
-                        <h3>Kasipatnam & Tyda</h3>
-                        <p>Jungle camp trails, refreshing stream crossings, and hidden waterfalls.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to book Kasipatnam Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="paderu.jpg" alt="Paderu">
-                    <div class="card-body">
-                        <span class="badge">Highlands</span>
-                        <h3>Paderu Coffee Highlands</h3>
-                        <p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to book Paderu Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="vizianagaram.jpg" alt="Vizianagaram">
-                    <div class="card-body">
-                        <span class="badge">Heritage</span>
-                        <h3>Vizianagaram Royal Fort</h3>
-                        <p>Historic Gajapathi stone architecture and Ramanarayanam cultural temple.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to book Vizianagaram Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. My Work Gallery (Your Cloudinary Photos + 6 Videos) -->
-        <section id="work">
-            <div class="section-header">
-                <h2>My Work & Field Gallery</h2>
-                <p>Live highlights, field snapshots, and project videos.</p>
-            </div>
-            <div class="grid">
-                <!-- Your Uploaded Cloudinary Photos -->
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy" alt="Featured Photo 1">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 1</h3>
-                        <p>On-ground service and local exploration.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi" alt="Featured Photo 2">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 2</h3>
-                        <p>Delivering quality service across the region.</p>
-                    </div>
-                </div>
-
-                <!-- 6 Video Placeholders -->
-                <div class="card">
-                    <video controls poster="video1-thumb.jpg"><source src="video1.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 1</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video2-thumb.jpg"><source src="video2.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 2</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video3-thumb.jpg"><source src="video3.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 3</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video4-thumb.jpg"><source src="video4.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 4</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video5-thumb.jpg"><source src="video5.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 5</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video6-thumb.jpg"><source src="video6.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 6</h3><p>Recent service highlight clip.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Quick Delivery Section -->
-        <section id="delivery">
-            <div class="section-header">
-                <h2>Quick Local Delivery</h2>
-                <p>Fast doorstep delivery for beverages, snacks, and essentials.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="drinks.jpg" alt="Cool Drinks">
-                    <div class="card-body">
-                        <h3>Cool Drinks & Soft Drinks</h3>
-                        <p>Chilled sodas, juices, and energy drinks delivered fast.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to order Cool Drinks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="snacks.jpg" alt="Snacks">
-                    <div class="card-body">
-                        <h3>Snacks & Refreshments</h3>
-                        <p>Fresh bakery items, chips, and evening snacks.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to order Snacks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="water-cans.jpg" alt="Water Delivery">
-                    <div class="card-body">
-                        <h3>Drinking Water Cans</h3>
-                        <p>20L purified mineral water cans for homes & events.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I need Water Cans" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Local Services Directory -->
-        <section id="services">
-            <div class="section-header">
-                <h2>Local Services Directory</h2>
-                <p>Trusted technicians and emergency help just one call away.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="mechanic.jpg" alt="Vehicle Mechanic">
-                    <div class="card-body">
-                        <h3>Vehicle Mechanic</h3>
-                        <p>Bike & car breakdown assistance, puncture, and engine repair.</p>
-                        <a href="tel:8985240287" class="btn btn-call">Call Mechanic</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="electrician.jpg" alt="Electrician">
-                    <div class="card-body">
-                        <h3>Electrician</h3>
-                        <p>per" title="Click or hover to view clearly">
-            <img id="rotatingProfile" src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/kkbcg6swdqwu9jcej9ox" alt="Profile Photo" class="profile-pic">
-        </div>
-        <div class="header-text">
-            <h1>Community Hub & Services</h1>
-            <p>Eastern Ghats Tourism • Quick Delivery • Local Experts</p>
-            <div class="header-socials">
-                <!-- Replace YOUR_INSTAGRAM_ID with your actual Instagram username -->
-                <a href="https://instagram.com/YOUR_INSTAGRAM_ID" target="_blank" class="social-pill">📸 Follow on Instagram</a>
-                <!-- Replace 919876543210 with your actual phone number -->
-                <a href="https://wa.me/919876543210" target="_blank" class="social-pill">💬 WhatsApp Direct</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- 2. Navigation Tabs -->
-    <nav>
-        <a href="#tourism">Tourism</a>
-        <a href="#work">My Work Gallery</a>
-        <a href="#delivery">Quick Delivery</a>
-        <a href="#services">Local Services</a>
-        <a href="#feedback">Feedback</a>
-    </nav>
-
-    <div class="container">
-
-        <!-- 3. Tourism Section -->
-        <section id="tourism">
-            <div class="section-header">
-                <h2>Eastern Ghats & Coastal Explorer</h2>
-                <p>Curated road trips, misty valleys, and cultural heritage tours.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="araku.jpg" alt="Araku Valley">
-                    <div class="card-body">
-                        <span class="badge">Hill Station</span>
-                        <h3>Araku Valley & Borra Caves</h3>
-                        <p>Tribal coffee plantations, misty viewpoints, and ancient limestone caves.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to book Araku Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="vizag.jpg" alt="Visakhapatnam">
-                    <div class="card-body">
-                        <span class="badge">Coastal</span>
-                        <h3>Visakhapatnam Coastline</h3>
-                        <p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to book Vizag Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="kasipatnam.jpg" alt="Kasipatnam">
-                    <div class="card-body">
-                        <span class="badge">Waterfalls</span>
-                        <h3>Kasipatnam & Tyda</h3>
-                        <p>Jungle camp trails, refreshing stream crossings, and hidden waterfalls.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to book Kasipatnam Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="paderu.jpg" alt="Paderu">
-                    <div class="card-body">
-                        <span class="badge">Highlands</span>
-                        <h3>Paderu Coffee Highlands</h3>
-                        <p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to book Paderu Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="vizianagaram.jpg" alt="Vizianagaram">
-                    <div class="card-body">
-                        <span class="badge">Heritage</span>
-                        <h3>Vizianagaram Royal Fort</h3>
-                        <p>Historic Gajapathi stone architecture and Ramanarayanam cultural temple.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to book Vizianagaram Tour" class="btn">Book Trip</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. My Work Gallery (Your Cloudinary Photos + 6 Videos) -->
-        <section id="work">
-            <div class="section-header">
-                <h2>My Work & Field Gallery</h2>
-                <p>Live highlights, field snapshots, and project videos.</p>
-            </div>
-            <div class="grid">
-                <!-- Your Uploaded Cloudinary Photos -->
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/vwiijklnmkbjhjtqnryy" alt="Featured Photo 1">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 1</h3>
-                        <p>On-ground service and local exploration.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/lepd84cp56mzwtmnlgfi" alt="Featured Photo 2">
-                    <div class="card-body">
-                        <span class="badge">Highlight</span>
-                        <h3>Field Snapshot 2</h3>
-                        <p>Delivering quality service across the region.</p>
-                    </div>
-                </div>
-
-                <!-- 6 Video Placeholders -->
-                <div class="card">
-                    <video controls poster="video1-thumb.jpg"><source src="video1.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 1</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video2-thumb.jpg"><source src="video2.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 2</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video3-thumb.jpg"><source src="video3.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 3</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video4-thumb.jpg"><source src="video4.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 4</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video5-thumb.jpg"><source src="video5.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 5</h3><p>Recent service highlight clip.</p></div>
-                </div>
-                <div class="card">
-                    <video controls poster="video6-thumb.jpg"><source src="video6.mp4" type="video/mp4"></video>
-                    <div class="card-body"><h3>Work Video 6</h3><p>Recent service highlight clip.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Quick Delivery Section -->
-        <section id="delivery">
-            <div class="section-header">
-                <h2>Quick Local Delivery</h2>
-                <p>Fast doorstep delivery for beverages, snacks, and essentials.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="drinks.jpg" alt="Cool Drinks">
-                    <div class="card-body">
-                        <h3>Cool Drinks & Soft Drinks</h3>
-                        <p>Chilled sodas, juices, and energy drinks delivered fast.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to order Cool Drinks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="snacks.jpg" alt="Snacks">
-                    <div class="card-body">
-                        <h3>Snacks & Refreshments</h3>
-                        <p>Fresh bakery items, chips, and evening snacks.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I want to order Snacks" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="water-cans.jpg" alt="Water Delivery">
-                    <div class="card-body">
-                        <h3>Drinking Water Cans</h3>
-                        <p>20L purified mineral water cans for homes & events.</p>
-                        <a href="https://wa.me/8985240287?text=Hi, I need Water Cans" class="btn btn-whatsapp">Order on WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Local Services Directory -->
-        <section id="services">
-            <div class="section-header">
-                <h2>Local Services Directory</h2>
-                <p>Trusted technicians and emergency help just one call away.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="mechanic.jpg" alt="Vehicle Mechanic">
-                    <div class="card-body">
-                        <h3>Vehicle Mechanic</h3>
-                        <p>Bike & car breakdown assistance, puncture, and engine repair.</p>
-                        <a href="tel:8985240287" class="btn btn-call">Call Mechanic</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="electrician.jpg" alt="Electrician">
-                    <div class="card-body">
-                        <h3>Electrician</h3>
-                        <p>
+                  
