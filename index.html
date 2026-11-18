@@ -1,215 +1,403 @@
----
-name: "Eastern Ghats & Coastal Andhra Explorer"
-description: "An evocative, editorial travel and cultural tourism design system celebrating Visakhapatnam coastal elegance, Araku misty valleys, Kasipatnam waterfalls, Paderu tribal coffee highlands, and Vizianagaram royal heritage."
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Hub & Services | Eastern Ghats Explorer</title>
+    <!-- Google Fonts: Playfair Display & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #14532D;       /* Deep Pine Teal */
+            --secondary: #9A3412;     /* Coast Bronze / Terracotta */
+            --accent: #B45309;        /* Sunlit Amber */
+            --surface: #FAF8F5;       /* Warm Ivory Background */
+            --container: #F0ECE1;     /* Surface Container */
+            --text-dark: #1C1917;
+            --text-muted: #57534E;
+            --white: #FFFFFF;
+        }
 
-## Overview
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--surface); color: var(--text-dark); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-The Eastern Ghats & Coastal Andhra Explorer design system evokes the misty serenity of Araku's coffee plantations, the deep azure waves of Visakhapatnam's Bay of Bengal coastline, the rustic earthen red hues of tribal handicraft traditions, and the majestic stone architecture of Vizianagaram's Fort. The interface combines an editorial magazine layout with high-utility travel logistics, immersive destination previews, elevation waypoints, and itinerary planning tools.
+        /* 1. Header Section */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 24px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+        .profile-pic {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            position: absolute;
+            left: 24px;
+            background-color: var(--container);
+        }
+        .header-text h1 { font-size: 32px; letter-spacing: -0.25px; }
+        .header-text p { font-size: 14px; opacity: 0.9; margin-top: 4px; }
 
-Designed for modern explorers, weekend road-trippers from Vizag, and cultural travelers seeking authentic Andhra Pradesh hill station and coastal heritage experiences.
+        /* 2. Navigation Tabs */
+        nav {
+            background-color: var(--secondary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.15s ease-out;
+        }
+        nav a:hover { background-color: var(--accent); }
 
-## Colors
+        /* Main Container */
+        .container { max-width: 1280px; margin: 0 auto; padding: 24px; }
+        section {
+            background-color: var(--container);
+            border-radius: 16px;
+            padding: 32px 24px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(28, 25, 23, 0.05);
+        }
+        .section-header { margin-bottom: 24px; border-bottom: 2px solid #E6E1D3; padding-bottom: 12px; }
+        .section-header h2 { font-size: 28px; color: var(--primary); }
+        .section-header p { color: var(--text-muted); font-size: 14px; }
 
-The color palette reflects the geographical transition from coastal sea waters to dense Ghat cloud forests and red laterite soil. 
+        /* Responsive Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
 
-- **Primary (Deep Pine Teal):** Evokes the dense forest canopy of the Eastern Ghats.
-- **Secondary (Coast Bronze / Terracotta):** Represents the rich earth, tribal terracotta craft, and warm coastal sunshine.
-- **Accent (Sunlit Amber):** Used for highlighting badges, ratings, and call-to-actions.
-- **Neutral & Surface:** Clean warm ivory tones and crisp contrast for outdoor readability.
+        /* Cards */
+        .card {
+            background-color: var(--surface);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover { transform: translateY(-4px); }
+        .card img, .card video {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #E6E1D3;
+        }
+        .card-body { padding: 16px; }
+        .badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            margin-bottom: 8px;
+        }
+        .card-body h3 { font-size: 20px; color: var(--text-dark); margin-bottom: 6px; }
+        .card-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
 
-```yaml
-colors:
-  accent: "#B45309"
-  success: "#15803D"
-  warning: "#D97706"
-  error: "#DC2626"
-  sand: "#F5F2EB"
-  light:
-    primary: "#14532D"
-    on-primary: "#FFFFFF"
-    secondary: "#9A3412"
-    on-secondary: "#FFFFFF"
-    surface: "#FAF8F5"
-    on-surface: "#1C1917"
-    surface-container: "#F0ECE1"
-    surface-container-low: "#F7F5EE"
-    surface-container-high: "#E6E1D3"
-    outline: "#57534E"
-    outline-variant: "#A8A29E"
-  dark:
-    primary: "#86EFAC"
-    on-primary: "#052E16"
-    secondary: "#FDBA74"
-    on-secondary: "#431407"
-    surface: "#1C1917"
-    on-surface: "#F5F5F4"
-    surface-container: "#292524"
-    surface-container-low: "#201D1B"
-    surface-container-high: "#44403C"
-    outline: "#A8A29E"
-    outline-variant: "#78716C"
-```
+        /* Buttons */
+        .btn {
+            display: block;
+            text-align: center;
+            background-color: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.15s ease;
+        }
+        .btn:hover { background-color: #0F3E21; }
+        .btn-whatsapp { background-color: #15803D; }
+        .btn-call { background-color: var(--secondary); }
+        .btn-call:hover { background-color: #7C2D12; }
 
-## Typography
+        /* 7. Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 28px 20px;
+            font-size: 14px;
+        }
+        footer p { opacity: 0.85; margin-top: 6px; }
 
-This system features a dual-pairing: **Playfair Display** (editorial serif with timeless warmth for headings, destination titles, and narrative accents) and **Poppins** (clean, geometric humanist sans-serif with exceptional readability for navigation, logistical itineraries, and data points).
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding-top: 20px; }
+            .profile-pic { position: static; margin-bottom: 12px; }
+            .header-text h1 { font-size: 24px; }
+            nav a { padding: 12px 14px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
 
-```yaml
-typography:
-  display-lg:
-    fontFamily: "Playfair Display"
-    fontSize: 48px
-    fontWeight: 700
-    lineHeight: 56px
-    letterSpacing: -0.5px
-  display-lg-mobile:
-    fontFamily: "Playfair Display"
-    fontSize: 32px
-    fontWeight: 700
-    lineHeight: 40px
-    letterSpacing: -0.25px
-  display-md:
-    fontFamily: "Playfair Display"
-    fontSize: 36px
-    fontWeight: 700
-    lineHeight: 44px
-    letterSpacing: -0.25px
-  display-md-mobile:
-    fontFamily: "Playfair Display"
-    fontSize: 28px
-    fontWeight: 700
-    lineHeight: 36px
-    letterSpacing: 0px
-  headline-lg:
-    fontFamily: "Playfair Display"
-    fontSize: 30px
-    fontWeight: 600
-    lineHeight: 38px
-    letterSpacing: 0px
-  headline-md:
-    fontFamily: "Playfair Display"
-    fontSize: 24px
-    fontWeight: 600
-    lineHeight: 32px
-    letterSpacing: 0px
-  headline-sm:
-    fontFamily: "Playfair Display"
-    fontSize: 20px
-    fontWeight: 600
-    lineHeight: 28px
-    letterSpacing: 0px
-  title-lg:
-    fontFamily: "Poppins"
-    fontSize: 18px
-    fontWeight: 600
-    lineHeight: 26px
-    letterSpacing: 0px
-  title-md:
-    fontFamily: "Poppins"
-    fontSize: 16px
-    fontWeight: 600
-    lineHeight: 24px
-    letterSpacing: 0px
-  body-lg:
-    fontFamily: "Poppins"
-    fontSize: 16px
-    fontWeight: 400
-    lineHeight: 26px
-    letterSpacing: 0px
-  body-md:
-    fontFamily: "Poppins"
-    fontSize: 14px
-    fontWeight: 400
-    lineHeight: 22px
-    letterSpacing: 0px
-  body-sm:
-    fontFamily: "Poppins"
-    fontSize: 12px
-    fontWeight: 400
-    lineHeight: 18px
-    letterSpacing: 0px
-  label-lg:
-    fontFamily: "Poppins"
-    fontSize: 14px
-    fontWeight: 500
-    lineHeight: 20px
-    letterSpacing: 0.1px
-  label-md:
-    fontFamily: "Poppins"
-    fontSize: 12px
-    fontWeight: 500
-    lineHeight: 16px
-    letterSpacing: 0.5px
-  label-sm:
-    fontFamily: "Poppins"
-    fontSize: 10px
-    fontWeight: 600
-    lineHeight: 14px
-    letterSpacing: 0.5px
-```
+    <!-- 1. Header Section -->
+    <header>
+        <!-- Upload your photo to GitHub and rename it to my-photo.jpg -->
+        <img src="my-photo.jpg" alt="My Profile" class="profile-pic">
+        <div class="header-text">
+            <h1>Community Hub & Services</h1>
+            <p>Eastern Ghats Tourism • Quick Delivery • Local Experts</p>
+        </div>
+    </header>
 
-## Layout & Spacing
+    <!-- 2. Navigation Tabs -->
+    <nav>
+        <a href="#tourism">Tourism</a>
+        <a href="#work">My Work (Photos & Videos)</a>
+        <a href="#delivery">Quick Delivery</a>
+        <a href="#services">Local Services</a>
+    </nav>
 
-A 12-column responsive fluid grid structured for desktop with standard max-width of 1280px, responsive padding, and an 8px base spacing increment.
+    <div class="container">
 
-```yaml
-spacing:
-  gutter-xs: 4px
-  gutter-sm: 8px
-  gutter-md: 16px
-  gutter-lg: 24px
-  gutter-xl: 32px
-  section: 48px
-  page-margin: 24px
-```
+        <!-- 3. Tourism Section -->
+        <section id="tourism">
+            <div class="section-header">
+                <h2>Eastern Ghats & Coastal Explorer</h2>
+                <p>Curated road trips, misty valleys, and cultural heritage tours.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <img src="araku.jpg" alt="Araku Valley">
+                    <div class="card-body">
+                        <span class="badge">Hill Station</span>
+                        <h3>Araku Valley & Borra Caves</h3>
+                        <p>Tribal coffee plantations, misty viewpoints, and ancient limestone caves.</p>
+                        <a href="https://wa.me/919876543210?text=Hi, I want to book Araku Tour" class="btn">Book Trip</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="vizag.jpg" alt="Visakhapatnam">
+                    <div class="card-body">
+                        <span class="badge">Coastal</span>
+                        <h3>Visakhapatnam Coastline</h3>
+                        <p>RK Beach waves, Kailasagiri hilltop views, and Rushikonda serenity.</p>
+                        <a href="https://wa.me/919876543210?text=Hi, I want to book Vizag Tour" class="btn">Book Trip</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="kasipatnam.jpg" alt="Kasipatnam">
+                    <div class="card-body">
+                        <span class="badge">Waterfalls</span>
+                        <h3>Kasipatnam & Tyda</h3>
+                        <p>Jungle camp trails, refreshing stream crossings, and hidden waterfalls.</p>
+                        <a href="https://wa.me/919876543210?text=Hi, I want to book Kasipatnam Tour" class="btn">Book Trip</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="paderu.jpg" alt="Paderu">
+                    <div class="card-body">
+                        <span class="badge">Highlands</span>
+                        <h3>Paderu Coffee Highlands</h3>
+                        <p>Cloud-kissed sunrise viewpoints and organic tribal turmeric farms.</p>
+                        <a href="https://wa.me/919876543210?text=Hi, I want to book Paderu Tour" class="btn">Book Trip</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="vizianagaram.jpg" alt="Vizianagaram">
+                    <div class="card-body">
+                        <span class="badge">Heritage</span>
+                        <h3>Vizianagaram Royal Fort</h3>
+                        <p>Historic Gajapathi stone architecture and Ramanarayanam cultural temple.</p>
+                        <a href="https://wa.me/919876543210?text=Hi, I want to book Vizianagaram Tour" class="btn">Book Trip</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-## Elevation & Depth
+        <!-- 4. My Work Gallery (Photos & 6 Videos) -->
+        <section id="work">
+            <div class="section-header">
+                <h2>My Work & Project Gallery</h2>
+                <p>Recent photos and videos from our trips, deliveries, and field work.</p>
+            </div>
+            <div class="grid">
+                <!-- Photo Placeholders -->
+                <div class="card">
+                    <img src="work-photo1.jpg" alt="Work Photo 1">
+                    <div class="card-body">
+                        <h3>Project Photo 1</h3>
+                        <p>Description of your work or trip photo.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="work-photo2.jpg" alt="Work Photo 2">
+                    <div class="card-body">
+                        <h3>Project Photo 2</h3>
+                        <p>Description of your work or trip photo.</p>
+                    </div>
+                </div>
 
-Visual hierarchy uses subtle surface-container tiers and ambient warm-tinted shadows, preserving natural outdoor clarity without harsh artificial drop-shadows.
+                <!-- 6 Video Placeholders -->
+                <div class="card">
+                    <video controls poster="video1-thumb.jpg">
+                        <source src="video1.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3>Work Video 1</h3>
+                        <p>Short highlight clip of recent service.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <video controls poster="video2-thumb.jpg">
+                        <source src="video2.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3>Work Video 2</h3>
+                        <p>Short highlight clip of recent service.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <video controls poster="video3-thumb.jpg">
+                        <source src="video3.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3>Work Video 3</h3>
+                        <p>Short highlight clip of recent service.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <video controls poster="video4-thumb.jpg">
+                        <source src="video4.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3>Work Video 4</h3>
+                        <p>Short highlight clip of recent service.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <video controls poster="video5-thumb.jpg">
+                        <source src="video5.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3>Work Video 5</h3>
+                        <p>Short highlight clip of recent service.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <video controls poster="video6-thumb.jpg">
+                        <source src="video6.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3>Work Video 6</h3>
+                        <p>Short highlight clip of recent service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-## Shapes
+        <!-- 5. Quick Delivery Section -->
+        <section id="delivery">
+            <div class="section-header">
+                <h2>Quick Local Delivery</h2>
+                <p>Fast doorstep delivery for beverages, snacks, and essentials.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <img src="drinks.jpg" alt="Cool Drinks">
+                    <div class="card-body">
+                        <h3>Cool Drinks & Soft Drinks</h3>
+                        <p>Chilled sodas, juices, and energy drinks delivered fast.</p>
+                        <a href="https://wa.me/919876543210?text=Hi, I want to order Cool Drinks" class="btn btn-whatsapp">Order on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="snacks.jpg" alt="Snacks">
+                    <div class="card-body">
+                        <h3>Snacks & Refreshments</h3>
+                        <p>Fresh bakery items, chips, and evening snacks.</p>
+                        <a href="https://wa.me/919876543210?text=Hi, I want to order Snacks" class="btn btn-whatsapp">Order on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="water-cans.jpg" alt="Water Delivery">
+                    <div class="card-body">
+                        <h3>Drinking Water Cans</h3>
+                        <p>20L purified mineral water cans for homes & events.</p>
+                        <a href="https://wa.me/919876543210?text=Hi, I need Water Cans" class="btn btn-whatsapp">Order on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-Organic and refined curves reflecting natural topography and architectural archways.
+        <!-- 6. Local Services Directory -->
+        <section id="services">
+            <div class="section-header">
+                <h2>Local Services Directory</h2>
+                <p>Trusted technicians and emergency help just one call away.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <img src="mechanic.jpg" alt="Vehicle Mechanic">
+                    <div class="card-body">
+                        <h3>Vehicle Mechanic</h3>
+                        <p>Bike & car breakdown assistance, puncture, and engine repair.</p>
+                        <a href="tel:+919876543210" class="btn btn-call">Call Mechanic</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="electrician.jpg" alt="Electrician">
+                    <div class="card-body">
+                        <h3>Electrician</h3>
+                        <p>House wiring, switchboard repair, fan & inverter installation.</p>
+                        <a href="tel:+919876543210" class="btn btn-call">Call Electrician</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="plumber.jpg" alt="Plumber">
+                    <div class="card-body">
+                        <h3>Plumber</h3>
+                        <p>Tap leaks, pipe fittings, motor repair, and tank cleaning.</p>
+                        <a href="tel:+919876543210" class="btn btn-call">Call Plumber</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="water-supply.jpg" alt="Water Supply">
+                    <div class="card-body">
+                        <h3>Bulk Water Supply</h3>
+                        <p>Water tankers and bulk supply for functions and construction.</p>
+                        <a href="tel:+919876543210" class="btn btn-call">Call Water Supply</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-```yaml
-rounded:
-  sm: 4px
-  DEFAULT: 8px
-  md: 12px
-  lg: 16px
-  xl: 24px
-  full: 9999px
-```
+    </div>
 
-## Motion & Micro-interaction
+    <!-- 7. Footer -->
+    <footer>
+        <h3>Community Hub & Services</h3>
+        <p>Contact: +91 98765 43210 | Visakhapatnam & Vizianagaram Region</p>
+        <p>&copy; 2026 All Rights Reserved.</p>
+    </footer>
 
-Understated, subtle hover elevations and smooth tab switches respecting calm nature exploration.
-
-```yaml
-motion:
-  state-change:
-    duration: 150ms
-    delay: 0ms
-    timingFunction: ease-out
-  surface-enter:
-    duration: 250ms
-    delay: 0ms
-    timingFunction: cubic-bezier(0.2, 0, 0, 1)
-  surface-exit:
-    duration: 150ms
-    delay: 0ms
-    timingFunction: cubic-bezier(0.3, 0, 1, 1)
-```
-
-## Voice & Content Strategy
-
-The voice is welcoming, culturally informed, and exploratory. Destination names are proudly featured alongside authentic local context: Araku Valley tribal coffee & Borra Caves, Visakhapatnam's RK Beach and Kailasagiri, Kasipatnam's Tyda jungle camp and stream crossings, Paderu's cloud-kissed viewpoints and organic turmeric farms, and Vizianagaram's historic Gajapathi fort and Ramanarayanam temple.
-
-## Components
-
-- `components/button.html`
-- `components/card.html`
-- `components/chip.html`
-- `components/tabs.html`
-- `components/badge.html`
+</body>
+</html>
